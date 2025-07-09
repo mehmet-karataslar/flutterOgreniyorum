@@ -1,0 +1,430 @@
+{
+  "moduleId": "control_flow",
+  "title": "Kontrol Akışı: Koduna Yön Verme Sanatı",
+  "week": 1,
+  "order": 3,
+  "estimatedTime": "75 dakika",
+  "difficulty": "beginner",
+  "description": "Merhaba, kod şefi! 🚀 Programlar, düz bir yolda ilerleyen arabalar gibi değildir; bazen dönemeçlerde karar vermeli, bazen de aynı yolu tekrar tekrar gitmeliler. İşte kontrol akışı, programına bu zekayı ve yönü veren sihirli bir harita! Bu modülde, programının kararlar almasını, farklı yollar seçmesini ve tekrarlayan işleri otomatikleştirmesini sağlayacaksın. Hazırsan, Dart’ın kontrol akışı dünyasına dalalım ve koduna rota çizelim!",
+  "introduction": {
+    "title": "Giriş: Kodunun Yol Haritasını Çiz!",
+    "content": "Selam, sevgili öğrenme yolcusu! 😄 Flutter ile harika uygulamalar yapma yolculuğunda üçüncü durağımıza hoş geldin. Önce değişkenlerle bilgiyi saklamayı, sonra operatörlerle bu bilgileri dans ettirmeyi öğrendin. Şimdi sıra, programına *karar verme* ve *tekrar yapma* yeteneği kazandırmakta! 🚗\n\nHayatımızda sürekli kararlar veririz: 'Eğer hava yağmurluysa şemsiye al, yoksa güneş gözlüğünü kap!' veya 'Alışveriş listesindeki her ürünü tek tek kontrol et.' Kontrol akışı, programına bu tür mantıksal düşünme gücünü verir. **if/else** ile kararlar alacak, **switch** ile şık seçimler yapacak, **for** ve **while** döngüleriyle tekrarlayan işleri otomatikleştireceksin. Ayrıca, **break** ve **continue** ile döngülerine yön vereceksin.\n\nBu modül, Flutter’da dinamik ve akıllı uygulamalar geliştirmek için temel oluşturacak. Örneğin, bir kullanıcının yaşına göre farklı ekranlar göstermek veya bir listedeki ürünleri sırayla işlemek için kontrol akışını kullanacaksın. Hazırsan, koduna yön vermeye başlayalım! 🗺️",
+    "keyPoints": [
+      "Koşullu ifadeler = Programın karar verme gücü",
+      "Döngüler = Tekrarlayan işleri otomatikleştirme sihri",
+      "if/else = Karar ağacının dalları",
+      "switch = Çoklu seçim için şık bir yol",
+      "for/while = Tekrarların motoru",
+      "break/continue = Döngüye ince ayar yapma"
+    ],
+    "motivationalQuote": "Kod yazmak, bir macera hikayesi yazmak gibidir. Kontrol akışı, bu hikayeye yön ve heyecan katar. Hadi, kendi hikayeni yaz! 🌟"
+  },
+  "sections": [
+    {
+      "id": "conditional_statements",
+      "title": "Koşullu İfadeler: Karar Verme Sanatı",
+      "content": "Programların en havalı yeteneklerinden biri, farklı durumlara göre farklı davranabilmesidir. Koşullu ifadeler, bu zekayı koduna katar. Tıpkı bir yol ayrımında hangi yöne gideceğine karar vermek gibi! Bu bölümde, **if/else** ve **switch** yapılarını keşfedeceğiz.",
+      "subsections": [
+        {
+          "id": "if_else_basics",
+          "title": "if/else: Karar Vermenin Temel Taşı",
+          "content": "if/else, programına 'Eğer bu doğruysa, şunu yap; değilse, başka bir şey yap!' deme gücü verir. Koşullar, her zaman bool (true/false) sonuç üretir. Haydi, bu karar mekanizmasını keşfedelim!",
+          "codeExamples": [
+            {
+              "title": "Hava Durumuna Göre Öneri",
+              "code": "String hava = 'güneşli';\n\nif (hava == 'yağmurlu') {\n  print('Şemsiyeni al, dışarı çıkarken ıslanma! ☔');\n} else if (hava == 'güneşli') {\n  print('Güneş gözlüğünü tak, harika bir gün! 😎');\n} else if (hava == 'karlı') {\n  print('Kalın giyin, kar topu savaşı yapalım! ❄️');\n} else {\n  print('Hava nasıl olursa olsun, keyfini çıkar!');\n}\n\n// Yaş kontrolü\nint yas = 16;\nif (yas >= 18) {\n  print('Ehliyet almaya hazırsın! 🚗');\n} else {\n  print('Ehliyet için ${18 - yas} yıl daha beklemelisin.');\n}",
+              "explanation": "if bloğu, koşul true olduğunda çalışır. else if, önceki koşul false ise başka bir koşulu kontrol eder. else, hiçbir koşul sağlanmazsa devreye girer.",
+              "output": "Güneş gözlüğünü tak, harika bir gün! 😎\nEhliyet için 2 yıl daha beklemelisin."
+            },
+            {
+              "title": "Sınav Notu Değerlendirme",
+              "code": "double not = 88.5;\n\nString harfNotu;\nif (not >= 90) {\n  harfNotu = 'A';\n  print('Mükemmel! $harfNotu aldın! 🎉');\n} else if (not >= 80) {\n  harfNotu = 'B';\n  print('Çok iyi! $harfNotu aldın!');\n} else if (not >= 70) {\n  harfNotu = 'C';\n  print('İyi iş! $harfNotu aldın.');\n} else if (not >= 60) {\n  harfNotu = 'D';\n  print('Geçtin ama biraz daha çalış! $harfNotu');\n} else {\n  harfNotu = 'F';\n  print('Üzgünüm, kaldın: $harfNotu');\n}\n\n// Ek kontrol\nif (not >= 60) {\n  print('Tebrikler, sınavı geçtin!');\n}",
+              "explanation": "Çoklu else if ile farklı aralıkları kontrol edebiliriz. İlk doğru koşul çalışır ve diğerleri atlanır.",
+              "output": "Çok iyi! B aldın!\nTebrikler, sınavı geçtin!"
+            },
+            {
+              "title": "Karmaşık Koşullar",
+              "code": "int yas = 20;\ndouble butce = 250.0;\nbool ogrenciMi = true;\n\nif (yas >= 18 && butce >= 200.0 && ogrenciMi) {\n  print('Öğrenci indirimli seyahat paketi senin!');\n} else if (yas >= 18 && butce >= 200.0) {\n  print('Standart seyahat paketi alabilirsin.');\n} else if (yas >= 18) {\n  print('Bütçen yetersiz, ekonomik paket öneririz.');\n} else {\n  print('18 yaşından küçüksün, velinle gel!');\n}",
+              "explanation": "&& ile birden fazla koşulu birleştirebiliriz. Koşulları sırayla kontrol ederek en uygun sonucu buluruz.",
+              "output": "Öğrenci indirimli seyahat paketi senin!"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Kullanıcının yaşına ve bütçesine göre bir etkinlik önerisi yapan bir kod yaz. (Yaş 18+, Bütçe 100+: Konser; Yaş 18+, Bütçe <100: Sinema; Yaş <18: Oyun parkı)",
+            "hint": "if/else if/else ve && operatörlerini kullan.",
+            "solution": "int yas = 25;\ndouble butce = 50.0;\n\nif (yas >= 18 && butce >= 100.0) {\n  print('Konser biletin hazır! 🎤');\n} else if (yas >= 18) {\n  print('Sinemaya gidelim! 🎬');\n} else {\n  print('Oyun parkında eğlen! 🎠');\n}",
+            "output": "Sinemaya gidelim! 🎬"
+          },
+          "keyPoints": [
+            "if: Koşul true ise çalışır",
+            "else if: Önceki koşullar false ise kontrol eder",
+            "else: Hiçbir koşul true değilse çalışır",
+            "bool koşullar zorunlu",
+            "İlk doğru koşul diğerlerini atlar"
+          ],
+          "realWorldUse": "Bir Flutter uygulamasında kullanıcının yaşına göre farklı ekranlar göstermek veya bütçeye göre öneriler sunmak için if/else kullanırsın."
+        },
+        {
+          "id": "switch_statements",
+          "title": "switch: Şık ve Hızlı Seçimler",
+          "content": "Bazen bir değişkenin farklı değerlerine göre farklı işlemler yapmak gerekir. if/else zincirleri yerine **switch**, daha temiz ve okunabilir bir çözüm sunar. Flutter’da menü seçimleri veya kullanıcı türleri için idealdir!",
+          "codeExamples": [
+            {
+              "title": "Haftanın Günü",
+              "code": "int gun = 4;\n\nswitch (gun) {\n  case 1:\n    print('Pazartesi: Haftaya enerjiyle başla! 💪');\n    break;\n  case 2:\n    print('Salı: Toplantılar günü! 📅');\n    break;\n  case 3:\n    print('Çarşamba: Haftanın tam ortası!');\n    break;\n  case 4:\n    print('Perşembe: Hafta sonu yaklaşıyor!');\n    break;\n  case 5:\n    print('Cuma: Yaşasın, hafta sonu kapıda! 🎉');\n    break;\n  case 6:\n  case 7:\n    print('Hafta sonu: Dinlen ve keyfini çıkar! 🏖️');\n    break;\n  default:\n    print('Geçersiz gün numarası!');\n}",
+              "explanation": "switch, değişkenin değerine göre uygun case’i çalıştırır. break, bir sonraki case’e geçmeyi önler. Aynı kodu birden fazla case için kullanabilirsin.",
+              "output": "Perşembe: Hafta sonu yaklaşıyor!"
+            },
+            {
+              "title": "Kullanıcı Türüne Göre Erişim",
+              "code": "String kullaniciTipi = 'moderator';\n\nswitch (kullaniciTipi) {\n  case 'admin':\n    print('Yönetici: Tüm özelliklere erişim sağlandı.');\n    print('Veritabanı yönetimi yetkisi verildi.');\n    break;\n  case 'moderator':\n    print('Moderatör: İçerik düzenleme yetkisi var.');\n    print('Kullanıcı yorumlarını kontrol edebilirsin.');\n    break;\n  case 'user':\n    print('Kullanıcı: Temel özelliklere erişim sağlandı.');\n    break;\n  case 'guest':\n  case 'anonymous':\n    print('Misafir: Sadece görüntüleme iznin var.');\n    break;\n  default:\n    print('Bilinmeyen kullanıcı tipi: $kullaniciTipi');\n    print('Erişim reddedildi!');\n}",
+              "explanation": "switch, String değerlerle de çalışır. Birden fazla case aynı kodu çalıştırabilir. default, hiçbir case uymazsa devreye girer.",
+              "output": "Moderatör: İçerik düzenleme yetkisi var.\nKullanıcı yorumlarını kontrol edebilirsin."
+            },
+            {
+              "title": "Sipariş Durumu",
+              "code": "String siparisDurumu = 'yolda';\n\nswitch (siparisDurumu) {\n  case 'hazirlaniyor':\n    print('Siparişin hazırlanıyor, biraz sabır! 🛠️');\n    break;\n  case 'yolda':\n    print('Siparişin yolda, kargocuyu bekle! 🚚');\n    break;\n  case 'teslim':\n    print('Siparişin teslim edildi, keyfini çıkar! 📦');\n    break;\n  default:\n    print('Sipariş durumu bilinmiyor: $siparisDurumu');\n}",
+              "explanation": "switch, bir e-ticaret uygulamasında sipariş durumlarını yönetmek için idealdir.",
+              "output": "Siparişin yolda, kargocuyu bekle! 🚚"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir kullanıcının abonelik türüne göre (free, premium, pro) farklı mesajlar gösteren bir switch yapısı yaz.",
+            "hint": "String bir değişken kullan ve her case için uygun bir mesaj yaz.",
+            "solution": "String abonelikTuru = 'premium';\n\nswitch (abonelikTuru) {\n  case 'free':\n    print('Ücretsiz plan: Sınırlı özelliklere erişim.');\n    break;\n  case 'premium':\n    print('Premium plan: Ek özellikler ve reklamsız kullanım!');\n    break;\n  case 'pro':\n    print('Pro plan: Tüm özellikler ve özel destek!');\n    break;\n  default:\n    print('Geçersiz abonelik türü: $abonelikTuru');\n}",
+            "output": "Premium plan: Ek özellikler ve reklamsız kullanım!"
+          },
+          "keyPoints": [
+            "switch: Tek değişkenin farklı değerleri için",
+            "case: Her değer için özel işlem",
+            "break: Bir sonraki case’e geçmeyi önler",
+            "default: Hiçbir case uymazsa çalışır",
+            "String ve int ile sık kullanılır"
+          ],
+          "realWorldUse": "Flutter’da bir uygulamanın menü seçeneklerini veya kullanıcı rollerini yönetmek için switch kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Koşullu İfadeler",
+        "content": [
+          "if/else zincirleri çok uzarsa, switch kullanmayı düşün.",
+          "Koşulları net ve basit tut, karmaşık ifadeleri ayrı değişkenlere böl.",
+          "switch kullanırken her zaman default ekle, beklenmedik durumları yakala.",
+          "Flutter’da koşullu ifadeler, dinamik UI oluşturmak için çok önemli!"
+        ]
+      }
+    },
+    {
+      "id": "loops",
+      "title": "Döngüler: Tekrarların Sihirli Dünyası",
+      "content": "Bilgisayarların süper gücü, aynı işi binlerce kez yorulmadan yapabilmesidir! Döngüler, bu tekrarlayan işleri otomatikleştirir. **for**, **for-in** ve **while** döngüleriyle koduna hız katacağız!",
+      "subsections": [
+        {
+          "id": "for_loops",
+          "title": "for Döngüsü: Sayılabilir Tekrarların Kralı",
+          "content": "Ne kadar tekrar yapacağını bildiğin durumlarda **for** döngüsü idealdir. Başlangıç, bitiş ve artış miktarını belirtebilirsin. Flutter’da liste elemanlarını işlemek için sıkça kullanacaksın!",
+          "codeExamples": [
+            {
+              "title": "Basit Sayım Döngüsü",
+              "code": "print('1’den 10’a kadar sayılar:');\nfor (int i = 1; i <= 10; i++) {\n  print('Sayı: $i');\n}\n\nprint('Döngü bitti, bravo!');",
+              "explanation": "for döngüsü, başlangıç (i=1), koşul (i<=10) ve artış (i++) üçlüsünden oluşur. Koşul true olduğu sürece döngü çalışır.",
+              "output": "1’den 10’a kadar sayılar:\nSayı: 1\nSayı: 2\nSayı: 3\nSayı: 4\nSayı: 5\nSayı: 6\nSayı: 7\nSayı: 8\nSayı: 9\nSayı: 10\nDöngü bitti, bravo!"
+            },
+            {
+              "title": "Çeşitli for Döngüleri",
+              "code": "// Geriye sayım\nprint('Roket fırlatma:');\nfor (int i = 5; i >= 1; i--) {\n  print('$i...');\n}\nprint('Fırlatıldı! 🚀');\n\n// 3’er 3’er artırma\nprint('\\n3’ün katları:');\nfor (int i = 3; i <= 15; i += 3) {\n  print(i);\n}\n\n// Çarpım tablosu\nint sayi = 7;\nprint('\\n$sayi çarpım tablosu:');\nfor (int i = 1; i <= 10; i++) {\n  print('$sayi x $i = ${sayi * i}');\n}",
+              "explanation": "for döngüsü esnektir: geriye sayabilir, farklı artışlarla çalışabilir veya matematiksel işlemler için kullanılabilir.",
+              "output": "Roket fırlatma:\n5...\n4...\n3...\n2...\n1...\nFırlatıldı! 🚀\n\n3’ün katları:\n3\n6\n9\n12\n15\n\n7 çarpım tablosu:\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70"
+            },
+            {
+              "title": "Toplam Hesaplama",
+              "code": "int toplam = 0;\n\nfor (int i = 1; i <= 20; i++) {\n  if (i % 2 == 0) {\n    toplam += i;\n    print('Çift sayı $i eklendi, toplam: $toplam');\n  }\n}\n\nprint('1’den 20’ye kadar çift sayıların toplamı: $toplam');",
+              "explanation": "for döngüsü ile koşullu işlemler birleştirilebilir. Burada sadece çift sayıları topladık.",
+              "output": "Çift sayı 2 eklendi, toplam: 2\nÇift sayı 4 eklendi, toplam: 6\nÇift sayı 6 eklendi, toplam: 12\nÇift sayı 8 eklendi, toplam: 20\nÇift sayı 10 eklendi, toplam: 30\nÇift sayı 12 eklendi, toplam: 42\nÇift sayı 14 eklendi, toplam: 56\nÇift sayı 16 eklendi, toplam: 72\nÇift sayı 18 eklendi, toplam: 90\nÇift sayı 20 eklendi, toplam: 110\n1’den 20’ye kadar çift sayıların toplamı: 110"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "1’den 50’ye kadar olan tek sayıların karelerini hesaplayıp yazdıran bir for döngüsü yaz.",
+            "hint": "i % 2 == 1 ile tek sayıları bul ve i * i ile kare al.",
+            "solution": "for (int i = 1; i <= 50; i++) {\n  if (i % 2 == 1) {\n    int kare = i * i;\n    print('$i’nin karesi: $kare');\n  }\n}",
+            "output": "1’in karesi: 1\n3’ün karesi: 9\n5’in karesi: 25\n7’nin karesi: 49\n...\n49’un karesi: 2401"
+          },
+          "keyPoints": [
+            "for: Tekrar sayısı belli olan döngüler",
+            "Başlangıç, koşul, artış üçlüsü",
+            "Esnek: Geriye sayma, farklı artışlar",
+            "Flutter’da listeleri işlemek için ideal"
+          ],
+          "realWorldUse": "Flutter’da bir liste widget’ını (örneğin, ürün listesi) oluştururken for döngüsü ile elemanları sırayla işlersin."
+        },
+        {
+          "id": "for_in_loops",
+          "title": "for-in Döngüsü: Koleksiyonlarla Dans",
+          "content": "Listeler, kümeler veya diğer koleksiyonları dolaşmak için **for-in** döngüsü en temiz yoldur. İndekse ihtiyaç duymadan elemanları tek tek ziyaret eder. Flutter’da veri listelerini işlemek için sıkça kullanılır!",
+          "codeExamples": [
+            {
+              "title": "Alışveriş Listesi",
+              "code": "List<String> sepet = ['Süt', 'Ekmek', 'Yumurta', 'Meyve', 'Peynir'];\n\nprint('Alışveriş sepetim:');\nfor (String urun in sepet) {\n  print('✓ $urun');\n}\n\n// Not ortalaması\nList<double> notlar = [90.5, 85.0, 78.5, 92.0, 88.5];\ndouble toplam = 0.0;\n\nfor (double not in notlar) {\n  toplam += not;\n}\n\ndouble ortalama = toplam / notlar.length;\nprint('Not ortalaması: ${ortalama.toStringAsFixed(1)}');",
+              "explanation": "for-in, koleksiyonun her elemanını sırayla alır. İndeksle uğraşmadan temiz kod yazmanı sağlar.",
+              "output": "Alışveriş sepetim:\n✓ Süt\n✓ Ekmek\n✓ Yumurta\n✓ Meyve\n✓ Peynir\nNot ortalaması: 86.9"
+            },
+            {
+              "title": "Karmaşık Veri Yapıları",
+              "code": "List<Map<String, dynamic>> kullanicilar = [\n  {'ad': 'Zeynep', 'yas': 22, 'aktif': true},\n  {'ad': 'Can', 'yas': 19, 'aktif': false},\n  {'ad': 'Elif', 'yas': 25, 'aktif': true},\n];\n\nprint('Kullanıcı bilgileri:');\nfor (Map<String, dynamic> kullanici in kullanicilar) {\n  String ad = kullanici['ad'];\n  int yas = kullanici['yas'];\n  bool aktif = kullanici['aktif'];\n  print('$ad ($yas yaş) - ${aktif ? 'Aktif' : 'Pasif'}');\n}\n\n// String karakterleri\nString kelime = 'Dart';\nprint('\\n$kelime harfleri:');\nfor (String harf in kelime.split('')) {\n  print('Harf: $harf');\n}",
+              "explanation": "for-in, karmaşık veri yapılarında da çalışır. Map’ler veya String karakterleri gibi farklı koleksiyonları dolaşabilirsin.",
+              "output": "Kullanıcı bilgileri:\nZeynep (22 yaş) - Aktif\nCan (19 yaş) - Pasif\nElif (25 yaş) - Aktif\n\nDart harfleri:\nHarf: D\nHarf: a\nHarf: r\nHarf: t"
+            },
+            {
+              "title": "Filtreleme ile for-in",
+              "code": "List<int> puanlar = [85, 92, 78, 60, 95, 45, 88];\nint gecerNotSayisi = 0;\n\nprint('Geçer notlar (60+):');\nfor (int puan in puanlar) {\n  if (puan >= 60) {\n    print('Geçer puan: $puan');\n    gecerNotSayisi++;\n  }\n}\n\nprint('Toplam geçer not sayısı: $gecerNotSayisi');",
+              "explanation": "for-in ile koşullu işlemler yaparak belirli elemanları filtreleyebilirsin.",
+              "output": "Geçer notlar (60+):\nGeçer puan: 85\nGeçer puan: 92\nGeçer puan: 78\nGeçer puan: 60\nGeçer puan: 95\nGeçer puan: 88\nToplam geçer not sayısı: 6"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir liste içindeki uzunluğu 4 veya daha fazla olan kelimeleri yazdıran bir for-in döngüsü yaz.",
+            "hint": "kelime.length >= 4 ile uzunluk kontrolü yap.",
+            "solution": "List<String> kelimeler = ['elma', 'armut', 'muz', 'portakal', 'üzüm'];\n\nprint('Uzunluğu 4+ olan kelimeler:');\nfor (String kelime in kelimeler) {\n  if (kelime.length >= 4) {\n    print(kelime);\n  }\n}",
+            "output": "Uzunluğu 4+ olan kelimeler:\nportakal"
+          },
+          "keyPoints": [
+            "for-in: Koleksiyon elemanlarını dolaşır",
+            "İndekse ihtiyaç yok, temiz kod",
+            "Listeler, Map’ler, String’ler için ideal",
+            "Flutter’da veri listeleri için sık kullanılır"
+          ],
+          "realWorldUse": "Flutter’da bir to-do listesi uygulamasında görevleri veya bir e-ticaret uygulamasında ürünleri listelemek için for-in kullanırsın."
+        },
+        {
+          "id": "while_loops",
+          "title": "while Döngüsü: Koşula Bağlı Tekrarlar",
+          "content": "Tekrar sayısı bilinmediğinde ama durdurma koşulu belli olduğunda **while** döngüsü devreye girer. Flutter’da kullanıcı girişlerini kontrol etmek veya dinamik verileri işlemek için harikadır!",
+          "codeExamples": [
+            {
+              "title": "Toplam Sınırı",
+              "code": "int sayi = 1;\nint toplam = 0;\n\nprint('Toplam 100’ü geçene kadar ekleme:');\nwhile (toplam < 100) {\n  toplam += sayi;\n  print('$sayi eklendi, toplam: $toplam');\n  sayi++;\n}\n\nprint('Son durum: Toplam = $toplam, Son sayı = ${sayi - 1}');",
+              "explanation": "while, koşul true olduğu sürece çalışır. Toplamın 100’ü geçmesiyle döngü biter.",
+              "output": "Toplam 100’ü geçene kadar ekleme:\n1 eklendi, toplam: 1\n2 eklendi, toplam: 3\n3 eklendi, toplam: 6\n...\n13 eklendi, toplam: 91\n14 eklendi, toplam: 105\nSon durum: Toplam = 105, Son sayı = 14"
+            },
+            {
+              "title": "Kullanıcı Giriş Simülasyonu",
+              "code": "String dogruSifre = 'flutter123';\nString? girilenSifre = '';\nint deneme = 0;\nint maxDeneme = 3;\n\nprint('Şifre girin:');\nwhile (girilenSifre != dogruSifre && deneme < maxDeneme) {\n  deneme++;\n  // Simülasyon için\n  girilenSifre = deneme == 2 ? 'flutter123' : 'yanlis$deneme';\n  print('Deneme $deneme: $girilenSifre');\n  \n  if (girilenSifre == dogruSifre) {\n    print('Giriş başarılı! 🎉');\n  } else if (deneme < maxDeneme) {\n    print('Hatalı şifre, tekrar deneyin.');\n  }\n}\n\nif (deneme == maxDeneme && girilenSifre != dogruSifre) {\n  print('Maksimum deneme sayısına ulaştınız!');\n}",
+              "explanation": "while, kullanıcı girişi gibi dinamik senaryolarda kullanılır. Koşul false olduğunda veya deneme sınırı dolduğunda durur.",
+              "output": "Şifre girin:\nDeneme 1: yanlis1\nHatalı şifre, tekrar deneyin.\nDeneme 2: flutter123\nGiriş başarılı! 🎉"
+            },
+            {
+              "title": "Rastgele Sayı Bulma",
+              "code": "import 'dart:math';\n\nint hedef = 42;\nint tahmin;\nint denemeSayisi = 0;\n\nprint('Hedef sayı: $hedef (Rastgele tahmin ediliyor)');\nwhile (tahmin != hedef) {\n  denemeSayisi++;\n  tahmin = Random().nextInt(100) + 1;\n  print('Deneme $denemeSayisi: $tahmin');\n}\n\nprint('Hedef bulundu! $denemeSayisi denemede.');",
+              "explanation": "while, bilinmeyen bir tekrar sayısında kullanılır. Rastgele bir sayı bulunana kadar devam eder.",
+              "output": "Hedef sayı: 42 (Rastgele tahmin ediliyor)\nDeneme 1: 67\nDeneme 2: 23\nDeneme 3: 42\nHedef bulundu! 3 denemede."
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir sayının karekökünü yaklaşık olarak bulan bir while döngüsü yaz. (Örnek: 16’nın karekökü için 1’den başlayarak kareleri kontrol et)",
+            "hint": "kare <= hedef koşulunu kullan.",
+            "solution": "int hedef = 16;\nint tahmin = 1;\n\nwhile (tahmin * tahmin <= hedef) {\n  print('Tahmin: $tahmin, Kare: ${tahmin * tahmin}');\n  tahmin++;\n}\n\ntahmin--; // Son tahmini geri al\nprint('$hedef’nin yaklaşık karekökü: $tahmin');",
+            "output": "Tahmin: 1, Kare: 1\nTahmin: 2, Kare: 4\nTahmin: 3, Kare: 9\nTahmin: 4, Kare: 16\n16’nin yaklaşık karekökü: 4"
+          },
+          "keyPoints": [
+            "while: Koşul true olduğu sürece çalışır",
+            "Tekrar sayısı bilinmeyebilir",
+            "Sonsuz döngü riskine dikkat!",
+            "Flutter’da dinamik işlemler için ideal"
+          ],
+          "realWorldUse": "Flutter’da bir API’den veri alırken veri gelene kadar beklemek veya kullanıcı girişini kontrol etmek için while kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Döngüler",
+        "content": [
+          "for, tekrar sayısı belli olduğunda en iyisidir.",
+          "for-in, liste veya koleksiyon dolaşırken temiz kod sağlar.",
+          "while kullanırken sonsuz döngüye düşmemek için koşulu iyi kontrol et.",
+          "Flutter’da döngüler, veri listelerini işlemek veya animasyonları kontrol etmek için kullanılır."
+        ]
+      }
+    },
+    {
+      "id": "loop_control",
+      "title": "Döngü Kontrolü: break ve continue ile İnce Ayar",
+      "content": "Döngüler güçlüdür, ama bazen onları erken durdurmak veya belirli adımları atlamak gerekir. **break** ve **continue**, döngülere bu esnekliği katar. Flutter’da veri filtreleme veya arama işlemleri için çok kullanışlıdır!",
+      "subsections": [
+        {
+          "id": "break_continue",
+          "title": "break ve continue: Döngüye Yön Ver",
+          "content": "**break**, döngüyü tamamen bitirir; **continue**, sadece o adımı atlar ve döngüye devam eder. Bu ikili, döngülerini tam senin istediğin gibi yönetir!",
+          "codeExamples": [
+            {
+              "title": "break: Arama ve Durdurma",
+              "code": "List<String> urunler = ['Telefon', 'Kulaklık', 'Tablet', 'Saat', 'Bilgisayar'];\nString arananUrun = 'Tablet';\nbool bulundu = false;\n\nprint('Ürün aranıyor: $arananUrun');\nfor (String urun in urunler) {\n  print('Kontrol: $urun');\n  if (urun == arananUrun) {\n    print('✓ $arananUrun bulundu!');\n    bulundu = true;\n    break;\n  }\n}\n\nif (!bulundu) {\n  print('$arananUrun stokta yok!');\n}\n\n// Sayısal örnek\nint sayac = 0;\nwhile (true) {\n  sayac++;\n  print('Sayaç: $sayac');\n  if (sayac >= 5) {\n    print('Sayaç 5’e ulaştı, dur!');\n    break;\n  }\n}",
+              "explanation": "break, bir koşul sağlandığında döngüyü hemen bitirir. Arama işlemlerinde veya belirli bir sınıra ulaşıldığında kullanılır.",
+              "output": "Ürün aranıyor: Tablet\nKontrol: Telefon\nKontrol: Kulaklık\nKontrol: Tablet\n✓ Tablet bulundu!\nSayaç: 1\nSayaç: 2\nSayaç: 3\nSayaç: 4\nSayaç: 5\nSayaç 5’e ulaştı, dur!"
+            },
+            {
+              "title": "continue: Hatalı Verileri Atla",
+              "code": "List<String?> yorumlar = ['Harika!', null, 'Güzel', '', 'Muhteşem', '   '];\n\nprint('Geçerli yorumlar:');\nfor (String? yorum in yorumlar) {\n  if (yorum == null || yorum.trim().isEmpty) {\n    print('Hatalı yorum atlandı: \"$yorum\"');\n    continue;\n  }\n  print('✓ $yorum');\n}\n\n// Sayısal örnek\nprint('\\n5’in katlarını atla:');\nfor (int i = 1; i <= 15; i++) {\n  if (i % 5 == 0) {\n    print('$i atlandı (5’in katı)');\n    continue;\n  }\n  print('Geçerli sayı: $i');\n}",
+              "explanation": "continue, belirli bir adımı atlar ama döngü devam eder. Hatalı verileri veya istenmeyen durumları filtrelemek için idealdir.",
+              "output": "Geçerli yorumlar:\n✓ Harika!\nHatalı yorum atlandı: \"null\"\n✓ Güzel\nHatalı yorum atlandı: \"\"\n✓ Muhteşem\nHatalı yorum atlandı: \"   \"\n\n5’in katlarını atla:\nGeçerli sayı: 1\nGeçerli sayı: 2\nGeçerli sayı: 3\nGeçerli sayı: 4\n5 atlandı (5’in katı)\nGeçerli sayı: 6\nGeçerli sayı: 7\nGeçerli sayı: 8\nGeçerli sayı: 9\n10 atlandı (5’in katı)\nGeçerli sayı: 11\nGeçerli sayı: 12\nGeçerli sayı: 13\nGeçerli sayı: 14\n15 atlandı (5’in katı)"
+            },
+            {
+              "title": "Karmaşık Arama ve Filtreleme",
+              "code": "List<Map<String, dynamic>> siparisler = [\n  {'id': 1, 'durum': 'yolda', 'fiyat': 150.0},\n  {'id': 2, 'durum': 'teslim', 'fiyat': 200.0},\n  {'id': 3, 'durum': 'yolda', 'fiyat': 50.0},\n  {'id': 4, 'durum': 'iptal', 'fiyat': 0.0},\n];\n\nprint('Yolda olan siparişler (fiyat > 100):');\nfor (Map<String, dynamic> siparis in siparisler) {\n  String durum = siparis['durum'];\n  double fiyat = siparis['fiyat'];\n  int id = siparis['id'];\n\n  if (durum != 'yolda') {\n    print('Sipariş $id atlandı (durum: $durum)');\n    continue;\n  }\n\n  if (fiyat <= 100.0) {\n    print('Sipariş $id atlandı (fiyat: $fiyat TL)');\n    continue;\n  }\n\n  print('✓ Sipariş $id: $fiyat TL');\n\n  if (id == 1) {\n    print('İlk uygun sipariş bulundu, dur!');\n    break;\n  }\n}",
+              "explanation": "break ve continue, karmaşık veri yapılarında filtreleme ve arama için kullanılabilir. Burada sadece yolda olan ve fiyatı 100 TL’den fazla siparişleri listeledik.",
+              "output": "Yolda olan siparişler (fiyat > 100):\n✓ Sipariş 1: 150.0 TL\nİlk uygun sipariş bulundu, dur!"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "1’den 100’e kadar sayıları yazdıran bir döngü yaz. 7’nin katlarını atla ve 50’den büyük ilk sayıyı bulduğunda dur.",
+            "hint": "% ile 7’nin katlarını kontrol et, break ile 50’den büyük sayıyı bulunca dur.",
+            "solution": "for (int i = 1; i <= 100; i++) {\n  if (i % 7 == 0) {\n    print('$i atlandı (7’nin katı)');\n    continue;\n  }\n\n  print('Sayı: $i');\n\n  if (i > 50) {\n    print('✓ 50’den büyük ilk sayı: $i');\n    break;\n  }\n}",
+            "output": "Sayı: 1\nSayı: 2\n...\n7 atlandı (7’nin katı)\nSayı: 8\n...\nSayı: 50\n✓ 50’den büyük ilk sayı: 51"
+          },
+          "keyPoints": [
+            "break: Döngüyü tamamen bitirir",
+            "continue: O adımı atlar, döngü devam eder",
+            "Arama işlemlerinde break çok kullanışlı",
+            "Hatalı verileri filtrelemek için continue ideal",
+            "Flutter’da veri işleme için sık kullanılır"
+          ],
+          "realWorldUse": "Flutter’da bir liste widget’ında belirli öğeleri atlamak (continue) veya bir öğe bulunduğunda işlemi durdurmak (break) için bu yapıları kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Döngü Kontrolü",
+        "content": [
+          "break ve continue’yi dikkatli kullan, fazla kullanım kodu karışık hale getirebilir.",
+          "Arama işlemlerinde break, performansı artırır.",
+          "continue ile hatalı verileri atla, ama atlanan verileri loglamayı unutma.",
+          "Flutter’da, kullanıcı verilerini filtrelerken bu yapılar hayat kurtarır!"
+        ]
+      }
+    }
+  ],
+  "quiz": {
+    "title": "Bilgini Test Et: Kontrol Akışında Usta mısın?",
+    "description": "Bu modülde öğrendiklerini pekiştirmek için kısa bir quiz zamanı! Koduna yön verme becerini göster, hadi bakalım! 😎",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Aşağıdaki kodun çıktısı nedir?\n\nint puan = 75;\nif (puan >= 80) {\n  print('Geçti');\n} else {\n  print('Kaldı');\n}",
+        "type": "multiple_choice",
+        "options": ["Geçti", "Kaldı", "Hiçbiri", "Hata"],
+        "correctAnswer": 1,
+        "explanation": "puan = 75, 80’den küçük olduğu için else bloğu çalışır ve 'Kaldı' yazdırılır."
+      },
+      {
+        "id": 2,
+        "question": "Aşağıdaki for döngüsü kaç kez çalışır?\n\nfor (int i = 5; i <= 15; i += 2) {\n  print(i);\n}",
+        "type": "multiple_choice",
+        "options": ["5", "6", "7", "8"],
+        "correctAnswer": 2,
+        "explanation": "i = 5, 7, 9, 11, 13, 15 için çalışır. Toplam 6 kez."
+      },
+      {
+        "id": 3,
+        "question": "Aşağıdaki kodun çıktısı nedir?\n\nString durum = 'aktif';\nswitch (durum) {\n  case 'aktif':\n    print('Çevrimiçi');\n    break;\n  case 'pasif':\n    print('Çevrimdışı');\n    break;\n  default:\n    print('Bilinmiyor');\n}",
+        "type": "multiple_choice",
+        "options": ["Çevrimiçi", "Çevrimdışı", "Bilinmiyor", "Hata"],
+        "correctAnswer": 0,
+        "explanation": "durum = 'aktif', switch case’i çalıştırır ve 'Çevrimiçi' yazdırılır."
+      },
+      {
+        "id": 4,
+        "question": "Aşağıdaki döngüde continue hangi durumda kullanılır?\n\nfor (int i = 1; i <= 10; i++) {\n  if (i % 2 == 0) {\n    continue;\n  }\n  print(i);\n}",
+        "type": "multiple_choice",
+        "options": [
+          "Döngüyü bitirmek için",
+          "Çift sayıları atlamak için",
+          "Tek sayıları atlamak için",
+          "Hiçbir şey yazdırmamak için"
+        ],
+        "correctAnswer": 2,
+        "explanation": "continue, i % 2 == 0 (çift sayılar) için çalışır ve bu adımları atlar, sadece tek sayılar yazdırılır."
+      }
+    ]
+  },
+  "practiceExercises": [
+    {
+      "title": "Akıllı Bütçe Planlayıcı",
+      "description": "Kullanıcının bütçesine ve yaşına göre bir tatil planı öner.",
+      "instructions": [
+        "Yaş (int) ve bütçe (double) değişkenleri tanımla.",
+        "if/else ile koşulları kontrol et.",
+        "18+, 1000+ TL: Lüks tatil; 18+, 500-1000 TL: Standart tatil; 18+, <500 TL: Kamp; <18: Aile tatili.",
+        "Sonucu yazdır."
+      ],
+      "starterCode": "int yas = 25;\ndouble butce = 750.0;\n\n// Tatil planı kodunu yaz",
+      "solution": "int yas = 25;\ndouble butce = 750.0;\n\nif (yas >= 18 && butce >= 1000.0) {\n  print('Lüks tatil paketi: 5 yıldızlı otel! 🏨');\n} else if (yas >= 18 && butce >= 500.0) {\n  print('Standart tatil: Güzel bir tatil köyü! 🏖️');\n} else if (yas >= 18) {\n  print('Kamp tatili: Doğayla iç içe! ⛺');\n} else {\n  print('Aile tatili: Ailenle keyifli bir macera! 👨‍👩‍👧');\n}",
+      "output": "Standart tatil: Güzel bir tatil köyü! 🏖️",
+      "difficulty": "beginner"
+    },
+    {
+      "title": "Sayı Tahmin Oyunu (Gelişmiş)",
+      "description": "Bilgisayarın tuttuğu sayıyı tahmin eden bir oyun yaz.",
+      "instructions": [
+        "1-100 arası rastgele bir sayı üret (Random kullan).",
+        "while döngüsü ile tahminleri kontrol et.",
+        "Her tahminde yön ver (büyük/küçük).",
+        "Doğru tahmin veya 5 deneme sınırı ile dur.",
+        "Deneme sayısına göre performans mesajı yaz."
+      ],
+      "starterCode": "import 'dart:math';\n\nint gizliSayi = Random().nextInt(100) + 1;\n\n// Tahmin oyunu kodunu yaz",
+      "solution": "import 'dart:math';\n\nint gizliSayi = Random().nextInt(100) + 1;\nint tahmin = 0;\nint denemeSayisi = 0;\nint maxDeneme = 5;\nList<int> tahminler = [50, 75, 25, 37, 42]; // Simülasyon için\nint tahminIndex = 0;\n\nprint('Sayı Tahmin Oyunu! 🎲');\nprint('1-100 arası bir sayı tuttum: $gizliSayi');\n\nwhile (tahmin != gizliSayi && denemeSayisi < maxDeneme) {\n  denemeSayisi++;\n  tahmin = tahminler[tahminIndex++];\n  print('Deneme $denemeSayisi: $tahmin');\n  \n  if (tahmin == gizliSayi) {\n    print('🎉 Tebrikler! $denemeSayisi denemede buldun!');\n  } else if (tahmin < gizliSayi) {\n    print('⬆️ Daha büyük bir sayı dene!');\n  } else {\n    print('⬇️ Daha küçük bir sayı dene!');\n  }\n}\n\nif (denemeSayisi == maxDeneme && tahmin != gizliSayi) {\n  print('Üzgünüm, $maxDeneme denemede bulamadın.');\n}\n\nif (tahmin == gizliSayi) {\n  if (denemeSayisi <= 3) {\n    print('Süper zeki! Harika tahmin!');\n  } else {\n    print('Güzel iş, biraz daha pratik yap!');\n  }\n}",
+      "output": "Sayı Tahmin Oyunu! 🎲\n1-100 arası bir sayı tuttum: 42\nDeneme 1: 50\n⬇️ Daha küçük bir sayı dene!\nDeneme 2: 75\n⬇️ Daha küçük bir sayı dene!\nDeneme 3: 25\n⬆️ Daha büyük bir sayı dene!\nDeneme 4: 37\n⬆️ Daha büyük bir sayı dene!\nDeneme 5: 42\n🎉 Tebrikler! 5 denemede buldun!\nGüzel iş, biraz daha pratik yap!",
+      "difficulty": "intermediate"
+    },
+    {
+      "title": "Geçerli E-posta Listesi",
+      "description": "E-posta listesini kontrol eden ve geçerli olanları yazdıran bir kod yaz.",
+      "instructions": [
+        "Bir String? listesi tanımla (bazı elemanlar null veya boş).",
+        "for-in döngüsü ile listeyi dolaş.",
+        "null veya boş e-postaları continue ile atla.",
+        "@ içeren e-postaları yazdır."
+      ],
+      "starterCode": "List<String?> emailler = ['test@example.com', null, 'user', '', 'info@site.com'];\n\n// Geçerli e-postaları yazdır",
+      "solution": "List<String?> emailler = ['test@example.com', null, 'user', '', 'info@site.com'];\n\nprint('Geçerli e-postalar:');\nfor (String? email in emailler) {\n  if (email == null || email.trim().isEmpty) {\n    print('Hatalı e-posta atlandı: \"$email\"');\n    continue;\n  }\n  if (!email.contains('@')) {\n    print('Geçersiz e-posta atlandı: \"$email\"');\n    continue;\n  }\n  print('✓ $email');\n}",
+      "output": "Geçerli e-postalar:\n✓ test@example.com\nHatalı e-posta atlandı: \"null\"\nGeçersiz e-posta atlandı: \"user\"\nHatalı e-posta atlandı: \"\"\n✓ info@site.com",
+      "difficulty": "beginner"
+    }
+  ],
+  "summary": {
+    "title": "Tebrikler, Koduna Yön Verdin!",
+    "content": "Bu modülde, Dart’ın kontrol akışı yapılarını öğrendin! **if/else** ile kararlar aldın, **switch** ile şık seçimler yaptın, **for** ve **for-in** ile listeleri dolaştın, **while** ile dinamik tekrarlar yaptın. **break** ve **continue** ile döngülerine ince ayar çektin. 🗺️\n\nBu bilgiler, Flutter’da dinamik ve akıllı uygulamalar geliştirmek için temel oluşturdu. Örneğin, bir kullanıcının seçimlerine göre farklı ekranlar göstermek veya bir veri listesini işlemek artık senin için çocuk oyuncağı! Bir sonraki modülde, koleksiyonlarla verilerini düzenli bir şekilde saklamayı öğreneceksin. Hazır mısın, kod ustası? 😎",
+    "keyTakeaways": [
+      "if/else: Karar ağacının dalları",
+      "switch: Çoklu seçim için temiz çözüm",
+      "for: Sayılabilir tekrarların kralı",
+      "for-in: Koleksiyonlarla dans",
+      "while: Koşula bağlı tekrarlar",
+      "break/continue: Döngüye ince ayar"
+    ],
+    "nextModule": "Koleksiyonlar: Verileri Organize Etme Sanatı",
+    "motivationalQuote": "Koduna yön vermek, bir ressamın tuvaline fırça darbeleri atmak gibidir. Sen bu sanatın ustasısın! Devam et! ✨"
+  },
+  "resources": {
+    "title": "Ek Kaynaklar: Kontrol Akışını Güçlendir",
+    "links": [
+      {
+        "name": "Dart Resmi Dokümantasyon: Kontrol Akışı",
+        "url": "https://dart.dev/language/control-flow",
+        "description": "Dart’ın kontrol akışı yapıları hakkında resmi rehber."
+      },
+      {
+        "name": "DartPad",
+        "url": "https://dartpad.dev",
+        "description": "Kontrol akışı yapılarını test etmek için çevrimiçi Dart editörü."
+      },
+      {
+        "name": "Flutter Official YouTube: Dart Temelleri",
+        "url": "https://www.youtube.com/flutter",
+        "description": "Flutter ekibinin kontrol akışı ve Dart üzerine videoları."
+      },
+      {
+        "name": "Stack Overflow: Dart Kontrol Akışı Soruları",
+        "url": "https://stackoverflow.com/questions/tagged/dart",
+        "description": "Kontrol akışı ile ilgili sorular sorup cevap bulabileceğin topluluk."
+      }
+    ]
+  }
+}

@@ -1,0 +1,518 @@
+{
+  "moduleId": "operators",
+  "title": "Operatörler: Verilerle Dans Etme Sanatı",
+  "week": 1,
+  "order": 2,
+  "estimatedTime": "60 dakika",
+  "difficulty": "beginner",
+  "description": "Merhaba, kod dünyasının sihirbazı! 🚀 Operatörler, değişkenlerimizi ve verilerimizi bir orkestra gibi yönetmemizi sağlayan sihirli sembollerdir. Onlar, bilgisayara verdiğimiz kısa ve net talimatlar gibidir. Bu modülde, Dart’ın operatörlerini keşfedecek, nasıl çalıştıklarını öğrenecek ve kodlarını nasıl daha güçlü hale getirebileceğini göreceksin. Hazırsan, verilerle dans etmeye başlayalım!",
+  "introduction": {
+    "title": "Operatörler: Kodun Ritmini Yakala!",
+    "content": "Selam, sevgili öğrenme yolcusu! 😄 Flutter ile muhteşem uygulamalar yapma yolculuğunda ikinci durağımıza hoş geldin. Bir önceki modülde, Dart’ın sihirli kutuları olan değişkenleri ve veri tiplerini öğrendin. Şimdi sıra, bu kutuları dans pistine çıkarıp onlara ne yapmaları gerektiğini söylemekte! İşte burada **operatörler** devreye giriyor.\n\nOperatörleri, bilgisayarla konuşurken kullandığımız kısa komutlar gibi düşün. Mesela, 'Bu iki sayıyı topla!' demek için '+' operatörünü kullanırsın. Ya da 'Bu iki şey eşit mi?' diye sormak için '==' operatörünü. Operatörler, kodunun dil bilgisi gibidir: sayıları toplar, metinleri birleştirir, koşulları kontrol eder ve daha birçok sihirli iş yapar!\n\nBu modülde, Dart’ın aritmetik, atama, karşılaştırma ve mantıksal operatörlerini keşfedeceğiz. Hangi operatörün ne zaman kullanılacağını, operatör önceliklerini ve nasıl temiz kod yazılacağını öğreneceksin. Ayrıca, Flutter’da bu operatörlerin nasıl hayat kurtardığını göreceksin. Haydi, sihirli sembollerin dünyasına dalalım! 🪄",
+    "keyPoints": [
+      "Operatörler = Verilerle konuşma ve dans etme araçları",
+      "Her operatörün özel bir görevi var",
+      "Doğru operatör seçimi = Temiz ve etkili kod",
+      "Operatör önceliği = Dans adımlarını doğru sırayla atmak",
+      "Flutter’da operatörler = Kullanıcı deneyimini şekillendiren sihir"
+    ],
+    "motivationalQuote": "Kod yazmak, bir hikâye anlatmak gibidir. Operatörler, bu hikâyeyi akıcı ve anlamlı kılan kelimelerdir. Hazır mısın? 🌟"
+  },
+  "sections": [
+    {
+      "id": "arithmetic_operators",
+      "title": "Aritmetik Operatörler: Matematikle Eğlenelim!",
+      "content": "Aritmetik operatörler, kod dünyasının dört işlemi! Sayılarla toplama, çıkarma, çarpma ve bölme yapmamızı sağlarlar. Ama Dart’ta birkaç sürpriz de var! Bu bölümde, hem temel işlemleri hem de özel operatörleri keşfedeceğiz. Hazırsan, hesap makinelerini hazırla! 🧮",
+      "subsections": [
+        {
+          "id": "basic_arithmetic",
+          "title": "Temel Dört İşlem: Klasik Ama Güçlü",
+          "content": "Hepimizin bildiği dört arkadaş: +, -, *, /. Ama programlamada bazı incelikleri var. Örneğin, Dart’ta bölme işlemi her zaman ondalıklı sonuç verir. Haydi, bu operatörlerin nasıl çalıştığını görelim!",
+          "codeExamples": [
+            {
+              "title": "Dört İşlem ile Alışveriş",
+              "code": "int urunSayisi = 5;\ndouble birimFiyat = 29.99;\n\n// Toplama: Toplam maliyeti hesapla\ndouble toplamMaliyet = urunSayisi * birimFiyat;\n\n// Çıkarma: İndirim uygula\ndouble indirim = 10.0;\ndouble indirimliFiyat = toplamMaliyet - indirim;\n\n// Çarpma: Vergi ekle (KDV %20)\ndouble vergi = toplamMaliyet * 0.20;\ndouble sonFiyat = indirimliFiyat + vergi;\n\n// Bölme: Birim başına maliyeti bul\ndouble birimMaliyet = toplamMaliyet / urunSayisi;\n\nprint('Toplam maliyet: $toplamMaliyet TL');\nprint('İndirimli fiyat: ${indirimliFiyat.toStringAsFixed(2)} TL');\nprint('Son fiyat (vergi dahil): ${sonFiyat.toStringAsFixed(2)} TL');\nprint('Birim maliyet: ${birimMaliyet.toStringAsFixed(2)} TL');",
+              "explanation": "Bu örnekte, bir alışveriş sepeti için temel aritmetik işlemler yaptık. Bölme işlemi (/) her zaman double sonuç verir, bu yüzden toStringAsFixed(2) ile virgülden sonra iki basamak gösterdik.",
+              "output": "Toplam maliyet: 149.95 TL\nİndirimli fiyat: 139.95 TL\nSon fiyat (vergi dahil): 169.94 TL\nBirim maliyet: 29.99 TL"
+            },
+            {
+              "title": "Farklı Veri Tipleriyle İşlem",
+              "code": "int sayi1 = 10;\ndouble sayi2 = 3.5;\n\n// int + double = double\ndouble toplam = sayi1 + sayi2; // 13.5\n\n// int * double = double\ndouble carpim = sayi1 * sayi2; // 35.0\n\nprint('Toplam: $toplam');\nprint('Çarpım: $carpim');",
+              "explanation": "Dart, farklı veri tipleriyle işlem yaparken sonucu daha geniş tipe (double) dönüştürür. Bu, hassasiyeti korur.",
+              "output": "Toplam: 13.5\nÇarpım: 35.0"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir restoranda hesap ödeyen iki arkadaş için kişi başı maliyeti hesapla. Toplam hesap ve bahşiş miktarını kullan.",
+            "hint": "Toplam maliyeti (hesap + bahşiş) kişi sayısına böl. / operatörünü kullan.",
+            "solution": "double hesap = 120.0;\ndouble bahsis = 15.0;\nint kisiSayisi = 2;\n\ndouble toplam = hesap + bahsis;\ndouble kisiBasi = toplam / kisiSayisi;\n\nprint('Kişi başı maliyet: ${kisiBasi.toStringAsFixed(2)} TL');",
+            "output": "Kişi başı maliyet: 67.50 TL"
+          },
+          "keyPoints": [
+            "+, -, *, /: Temel matematik işlemleri",
+            "/ her zaman double sonuç verir",
+            "int + double = double (tip dönüşümü)",
+            "toStringAsFixed ile ondalık kontrolü"
+          ],
+          "realWorldUse": "Bir e-ticaret uygulamasında sepet toplamını, indirimleri veya KDV’yi hesaplamak için bu operatörleri kullanırsın."
+        },
+        {
+          "id": "special_arithmetic",
+          "title": "Özel Aritmetik Operatörler: Süper Güçler",
+          "content": "Dart, iki özel operatörle matematiği daha eğlenceli hale getiriyor: ~/ (tamsayı bölme) ve % (modulo). Bunlar, özellikle döngüler ve koşullu işlemler için çok kullanışlı!",
+          "codeExamples": [
+            {
+              "title": "Tamsayı Bölme ve Modulo",
+              "code": "int toplamDakika = 125;\n\n// ~/: Tamsayı bölme (saat hesaplama)\nint saat = toplamDakika ~/ 60; // 2\n\n// %: Kalan (dakika hesaplama)\nint dakika = toplamDakika % 60; // 5\n\nprint('$toplamDakika dakika = $saat saat $dakika dakika');\n\n// Çift/Tek kontrolü\nint sayi = 42;\nif (sayi % 2 == 0) {\n  print('$sayi çift bir sayıdır!');\n} else {\n  print('$sayi tek bir sayıdır!');\n}\n\n// 3’e bölünebilirlik\nif (sayi % 3 == 0) {\n  print('$sayi 3’e tam bölünür!');\n} else {\n  print('$sayi 3’e tam bölünmez.');\n}",
+              "explanation": "~/, bölümün sadece tam kısmını verir. % ise kalanı bulur. Çift/tek kontrolü veya belirli bir sayıya bölünebilirlik için % süperdir!",
+              "output": "125 dakika = 2 saat 5 dakika\n42 çift bir sayıdır!\n42 3’e tam bölünür!"
+            },
+            {
+              "title": "Döngülerde Modulo Kullanımı",
+              "code": "for (int i = 1; i <= 10; i++) {\n  if (i % 2 == 0) {\n    print('$i çift sayıdır');\n  }\n}",
+              "explanation": "% operatörü, döngülerde belirli desenler oluşturmak için kullanılır. Burada sadece çift sayıları yazdırdık.",
+              "output": "2 çift sayıdır\n4 çift sayıdır\n6 çift sayıdır\n8 çift sayıdır\n10 çift sayıdır"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir sayının 5’e tam bölünüp bölünmediğini kontrol eden bir kod yaz. Bölünüyorsa '5’e tam bölünür', değilse '5’e tam bölünmez' yazdır.",
+            "hint": "% operatörünü kullan. sayi % 5 == 0 ise tam bölünür.",
+            "solution": "int sayi = 25;\nif (sayi % 5 == 0) {\n  print('$sayi 5’e tam bölünür');\n} else {\n  print('$sayi 5’e tam bölünmez');\n}",
+            "output": "25 5’e tam bölünür"
+          },
+          "keyPoints": [
+            "~/: Tamsayı bölme, küsüratı atar",
+            "%: Kalan bulma (modulo)",
+            "Çift/tek kontrolü: sayi % 2 == 0",
+            "Döngülerde ve koşullarda sık kullanılır"
+          ],
+          "realWorldUse": "Bir zamanlayıcı uygulamasında süreyi saat ve dakikaya çevirmek (~/ ve %) veya bir oyunda puanların belirli bir sayıya bölünebilirliğini kontrol etmek için bu operatörleri kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Aritmetik Operatörler",
+        "content": [
+          "Bölme işlemlerinde sıfıra bölme hatasına dikkat et. Her zaman kontrol yap!",
+          "Ondalıklı sonuçlar için toStringAsFixed() ile okunabilir çıktılar üret.",
+          "% operatörü, döngülerde desen oluşturmak için süper bir araç."
+        ]
+      }
+    },
+    {
+      "id": "assignment_operators",
+      "title": "Atama Operatörleri: Kodun Kısayol Ustaları",
+      "content": "Kod yazarken sürekli 'sayac = sayac + 1' yazmak biraz yorucu, değil mi? Atama operatörleri, bu tür işlemleri kısa ve şık hale getirir. Hem sayılarla hem de metinlerle çalışırlar. Haydi, bu sihirli kısayolları keşfedelim!",
+      "subsections": [
+        {
+          "id": "basic_assignment",
+          "title": "Temel Atama ve Kısayollar",
+          "content": "Atama operatörleri, bir değişkenin değerini güncellerken yazımı kolaylaştırır. Sayılarla, metinlerle ve daha fazlasıyla çalışabilirler!",
+          "codeExamples": [
+            {
+              "title": "Alışveriş Sepeti Güncelleme",
+              "code": "double sepetTutari = 100.0;\n\n// Klasik yöntem\nsepetTutari = sepetTutari + 50.0; // 150.0\n\n// Kısayol yöntemi\nsepetTutari += 25.0; // 175.0\nsepetTutari -= 10.0; // 165.0\nsepetTutari *= 1.1; // 181.5 (%10 zam)\nsepetTutari /= 2; // 90.75 (yarıya böl)\n\nprint('Sepet tutarı: ${sepetTutari.toStringAsFixed(2)} TL');\n\n// String ile birleştirme\nString mesaj = 'Merhaba';\nmesaj += ', Flutter!';\nprint(mesaj);",
+              "explanation": "Atama operatörleri, değişkenin mevcut değerini alır, işlemi yapar ve sonucu aynı değişkene atar. +=, String birleştirme için de kullanılabilir.",
+              "output": "Sepet tutarı: 90.75 TL\nMerhaba, Flutter!"
+            },
+            {
+              "title": "Puanlama Sistemi",
+              "code": "int puan = 50;\n\npuan += 20; // Bonus puan\npuan *= 2; // Çift puan kampanyası\npuan -= 10; // Ceza puanı\n\nprint('Son puan: $puan');",
+              "explanation": "Atama operatörleri, oyunlarda puan güncellemeleri gibi senaryolarda sıkça kullanılır.",
+              "output": "Son puan: 110"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir kullanıcının puanını güncelleyen bir kod yaz. Başlangıç puanı 100, 30 puan ekle, sonra puanı 2’ye böl.",
+            "hint": "+= ve /= operatörlerini kullan.",
+            "solution": "double puan = 100.0;\npuan += 30.0;\npuan /= 2;\nprint('Son puan: $puan');",
+            "output": "Son puan: 65.0"
+          },
+          "keyPoints": [
+            "+=: Ekle ve ata",
+            "-=: Çıkar ve ata",
+            "*=: Çarp ve ata",
+            "/=: Böl ve ata",
+            "String birleştirme için += süper"
+          ],
+          "realWorldUse": "Bir e-ticaret uygulamasında sepet tutarını güncellemek veya bir oyunda oyuncunun puanını artırmak/azaltmak için atama operatörlerini kullanırsın."
+        },
+        {
+          "id": "increment_decrement",
+          "title": "Artırma ve Azaltma (++, --): Küçük Ama Güçlü",
+          "content": "++ ve -- operatörleri, bir sayıyı 1 artırmak veya azaltmak için kullanılır. Özellikle döngülerde ve sayaçlarda çok işe yararlar. Ama dikkat: prefix ve postfix kullanımları farklı sonuçlar verebilir!",
+          "codeExamples": [
+            {
+              "title": "Sepet Yönetimi",
+              "code": "int sepetAdedi = 3;\n\nprint('Başlangıç: $sepetAdedi');\n\nsepetAdedi++; // Ürün ekle\nprint('Ürün eklendi: $sepetAdedi');\n\nsepetAdedi--; // Ürün çıkar\nprint('Ürün çıkarıldı: $sepetAdedi');\n\n// Prefix vs Postfix\nint sayac = 5;\nint sonuc1 = ++sayac; // Önce artır, sonra ata\nint sonuc2 = sayac++; // Önce ata, sonra artır\n\nprint('Prefix: sayac=$sayac, sonuc1=$sonuc1');\nprint('Postfix: sayac=$sayac, sonuc2=$sonuc2');",
+              "explanation": "++ ve --, sayacı hızlıca günceller. Prefix (++sayac), önce artırır; postfix (sayac++), önce değeri kullanır sonra artırır.",
+              "output": "Başlangıç: 3\nÜrün eklendi: 4\nÜrün çıkarıldı: 3\nPrefix: sayac=7, sonuc1=6\nPostfix: sayac=7, sonuc2=6"
+            },
+            {
+              "title": "Döngülerde Artırma",
+              "code": "int sayac = 0;\nwhile (sayac < 5) {\n  print('Sayaç: $sayac');\n  sayac++;\n}",
+              "explanation": "Döngülerde ++, sayacı her adımda 1 artırır. Bu, tekrarlayan işlemleri yönetmek için idealdir.",
+              "output": "Sayaç: 0\nSayaç: 1\nSayaç: 2\nSayaç: 3\nSayaç: 4"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir oyunda oyuncunun canını yöneten bir kod yaz. Başlangıç canı 10, iki kez artır ve bir kez azalt, sonra sonucu yazdır.",
+            "hint": "++ ve -- operatörlerini kullan.",
+            "solution": "int can = 10;\ncan++;\ncan++;\ncan--;\nprint('Son can: $can');",
+            "output": "Son can: 11"
+          },
+          "keyPoints": [
+            "++: 1 artır",
+            "--: 1 azalt",
+            "Prefix (++sayac): Önce artır, sonra kullan",
+            "Postfix (sayac++): Önce kullan, sonra artır",
+            "Döngülerde ve sayaçlarda sık kullanılır"
+          ],
+          "realWorldUse": "Bir alışveriş uygulamasında sepetdeki ürün sayısını artırmak/azaltmak veya bir oyunda tur sayısını güncellemek için ++/-- kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Atama Operatörleri",
+        "content": [
+          "Atama operatörleri, kodu kısa ve okunabilir tutar. Ama aşırı kullanmaktan kaçın, okunabilirlik önemli!",
+          "Prefix ve postfix farkını iyi anla, özellikle karmaşık ifadelerde hata yapmamak için.",
+          "String birleştirme için +=, kullanıcı mesajlarını dinamikleştirmek için harika."
+        ]
+      }
+    },
+    {
+      "id": "comparison_operators",
+      "title": "Karşılaştırma Operatörleri: Kodun Hakemleri",
+      "content": "Programların en süper güçlerinden biri, karar verebilmesidir! Karşılaştırma operatörleri, iki değeri karşılaştırarak bu kararları verir. Sonuç her zaman true veya false olur. Haydi, bu hakemleri tanıyalım!",
+      "subsections": [
+        {
+          "id": "comparison_basics",
+          "title": "Temel Karşılaştırmalar: Kim Büyük, Kim Eşit?",
+          "content": "Karşılaştırma operatörleri, iki değeri karşılaştırır ve mantıksal bir sonuç (bool) döndürür. if-else yapılarında sıkça kullanılırlar.",
+          "codeExamples": [
+            {
+              "title": "Yaş ve Bütçe Kontrolü",
+              "code": "int yas = 20;\ndouble butce = 500.0;\n\nbool ehliyetAlabilirMi = yas >= 18; // true\nbool biletAlabilirMi = butce >= 300.0; // true\nbool zenginMi = butce > 1000.0; // false\nbool ayniButceMi = butce == 500.0; // true\n\nprint('Ehliyet alabilir mi? $ehliyetAlabilirMi');\nprint('Bilet alabilir mi? $biletAlabilirMi');\nprint('Zengin mi? $zenginMi');\nprint('Bütçe tam 500 mü? $ayniButceMi');\n\n// Pratik kullanım\nif (yas >= 18 && butce >= 300.0) {\n  print('Seyahat paketi satın alabilirsin!');\n} else {\n  print('Üzgünüm, koşulları karşılamıyorsun.');\n}",
+              "explanation": "Karşılaştırma operatörleri, koşullu ifadelerde kullanılır ve bool sonuç döner. >=, <= gibi operatörler, sınırları kontrol etmek için idealdir.",
+              "output": "Ehliyet alabilir mi? true\nBilet alabilir mi? true\nZengin mi? false\nBütçe tam 500 mü? true\nSeyahat paketi satın alabilirsin!"
+            },
+            {
+              "title": "Sınav Sonucu Kontrolü",
+              "code": "double not = 75.5;\n\nif (not >= 50.0) {\n  print('Tebrikler, sınavı geçtin!');\n} else {\n  print('Üzgünüm, sınavdan kaldın.');\n}\n\nif (not == 100.0) {\n  print('Mükemmel! Full puan!');\n}",
+              "explanation": "Karşılaştırma operatörleri, sınav sonuçları gibi koşulları değerlendirmek için kullanılır.",
+              "output": "Tebrikler, sınavı geçtin!"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir kullanıcının yaşına göre oy kullanıp kullanamayacağını kontrol eden bir kod yaz. (18 ve üstü oy kullanabilir.)",
+            "hint": ">= operatörünü kullan.",
+            "solution": "int yas = 19;\nif (yas >= 18) {\n  print('Oy kullanabilirsin!');\n} else {\n  print('Oy kullanmak için $yas yaşındasın, ${18 - yas} yıl daha beklemelisin.');\n}",
+            "output": "Oy kullanabilirsin!"
+          },
+          "keyPoints": [
+            "==: Eşit mi?",
+            "!=: Eşit değil mi?",
+            ">: Büyük mü?",
+            "<: Küçük mü?",
+            ">=: Büyük veya eşit mi?",
+            "<=: Küçük veya eşit mi?"
+          ],
+          "realWorldUse": "Bir uygulamada kullanıcının yaşına göre erişim izni vermek veya bir bütçe kontrolü yapmak için karşılaştırma operatörlerini kullanırsın."
+        },
+        {
+          "id": "string_comparison",
+          "title": "String Karşılaştırması: Harflerin Dansı",
+          "content": "String’leri karşılaştırmak, sayılardan biraz farklı. Dart, büyük/küçük harfe duyarlıdır ve alfabetik sırayı dikkate alır. Türkçe karakterler için de dikkatli olmalısın!",
+          "codeExamples": [
+            {
+              "title": "String Karşılaştırması",
+              "code": "String isim1 = 'Ali';\nString isim2 = 'Zeynep';\nString isim3 = 'ali';\n\n// Eşitlik kontrolü\nbool ayniMi = isim1 == isim2; // false\nbool buyukKucukFark = isim1 == isim3; // false (A ≠ a)\n\n// Alfabetik sıralama\nbool onceMi = isim1.compareTo(isim2) < 0; // true (A, Z’den önce)\n\n// Büyük/küçük harf duyarsız\nbool esitMi = isim1.toLowerCase() == isim3.toLowerCase(); // true\n\nprint('$isim1 == $isim2: $ayniMi');\nprint('$isim1 == $isim3: $buyukKucukFark');\nprint('$isim1, $isim2’den önce mi? $onceMi');\nprint('Büyük/küçük harf duyarsız: $esitMi');\n\n// Şifre kontrolü\nString girilenSifre = 'Pass123';\nString dogruSifre = 'pass123';\nif (girilenSifre.toLowerCase() == dogruSifre.toLowerCase()) {\n  print('Şifre doğru!');\n} else {\n  print('Şifre yanlış!');\n}",
+              "explanation": "String karşılaştırması büyük/küçük harfe duyarlıdır. compareTo(), alfabetik sıralama için kullanılır. toLowerCase() ile duyarsız karşılaştırma yapabilirsin.",
+              "output": "Ali == Zeynep: false\nAli == ali: false\nAli, Zeynep’den önce mi? true\nBüyük/küçük harf duyarsız: true\nŞifre doğru!"
+            },
+            {
+              "title": "Türkçe Karakterler",
+              "code": "String sehir1 = 'İzmir';\nString sehir2 = 'istanbul';\n\nif (sehir1.toLowerCase().compareTo(sehir2.toLowerCase()) < 0) {\n  print('$sehir1, $sehir2’den alfabetik olarak önce gelir.');\n} else {\n  print('$sehir2, $sehir1’den alfabetik olarak önce gelir.');\n}",
+              "explanation": "Türkçe karakterler (İ, ı, ş, ç) alfabetik sıralamada farklı davranabilir. toLowerCase() ile tutarlılık sağlanır.",
+              "output": "istanbul, İzmir’den alfabetik olarak önce gelir."
+            }
+          ],
+          "interactiveExercise": {
+            "question": "İki ismi alfabetik sıraya göre karşılaştıran bir kod yaz. İlk isim ikinci isimden önce geliyorsa 'Önce', değilse 'Sonra' yazdır.",
+            "hint": "compareTo() kullan.",
+            "solution": "String isim1 = 'Can';\nString isim2 = 'Ayşe';\nif (isim1.compareTo(isim2) < 0) {\n  print('$isim1, $isim2’den önce gelir.');\n} else {\n  print('$isim1, $isim2’den sonra gelir.');\n}",
+            "output": "Can, Ayşe’den sonra gelir."
+          },
+          "keyPoints": [
+            "String karşılaştırması büyük/küçük harfe duyarlı",
+            "compareTo(): Alfabetik sıralama için",
+            "toLowerCase() ile duyarsız karşılaştırma",
+            "Türkçe karakterlere dikkat (İ, ı, ş, ç)"
+          ],
+          "realWorldUse": "Bir kullanıcı listesini alfabetik sıralamak veya bir giriş formunda şifre doğrulama yapmak için String karşılaştırmasını kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Karşılaştırma Operatörleri",
+        "content": [
+          "String karşılaştırmalarında büyük/küçük harf duyarlılığına dikkat et.",
+          "Türkçe karakterler için toLowerCase() veya toUpperCase() kullan.",
+          "Karşılaştırma sonuçlarını bool değişkenlerde saklayarak kodu daha okunabilir yap."
+        ]
+      }
+    },
+    {
+      "id": "logical_operators",
+      "title": "Mantıksal Operatörler: Kodun Akıl Yürütme Gücü",
+      "content": "Programların gerçekten zeki olabilmesi için mantıksal operatörlere ihtiyacımız var! Bu operatörler, koşulları birleştirerek karmaşık mantıklar kurmamızı sağlar. &&, || ve ! operatörleriyle koduna akıl katmaya hazır mısın?",
+      "subsections": [
+        {
+          "id": "logical_and_or",
+          "title": "VE (&&) ve VEYA (||): Koşulları Birleştir",
+          "content": "&& (VE) ve || (VEYA) operatörleri, birden fazla koşulu birleştirmek için kullanılır. && için tüm koşullar doğru olmalı, || için bir tanesi yeterli!",
+          "codeExamples": [
+            {
+              "title": "Etkinlik Katılım Kontrolü",
+              "code": "int yas = 22;\ndouble butce = 250.0;\nbool ogrenciMi = true;\n\n// &&: Tüm koşullar doğru olmalı\nif (yas >= 18 && butce >= 200.0) {\n  print('Etkinliğe katılabilirsin!');\n}\n\n// ||: Bir koşul doğru olsa yeter\nif (ogrenciMi || butce >= 300.0) {\n  print('İndirimli bilete hak kazandın!');\n}\n\n// Karmaşık mantık\nif ((yas >= 18 && yas <= 25) || (butce >= 500.0 && ogrenciMi)) {\n  print('Özel VIP paketi senin!');\n}\n\n// Kullanıcı girişi\nString kullaniciAdi = 'user1';\nString sifre = 'pass123';\n\nif (kullaniciAdi == 'user1' && sifre == 'pass123') {\n  print('Giriş başarılı!');\n} else {\n  print('Kullanıcı adı veya şifre yanlış!');\n}",
+              "explanation": "&&, tüm koşulların doğru olmasını ister. ||, bir koşulun doğru olmasıyla yetinir. Parantezler, karmaşık ifadelerde önceliği netleştirir.",
+              "output": "Etkinliğe katılabilirsin!\nİndirimli bilete hak kazandın!\nÖzel VIP paketi senin!\nGiriş başarılı!"
+            },
+            {
+              "title": "Form Doğrulama",
+              "code": "String email = 'test@example.com';\nString sifre = 'abc123';\n\nif (email.contains('@') && sifre.length >= 6) {\n  print('Form geçerli, kayıt olabilirsiniz!');\n} else {\n  print('Geçersiz email veya kısa şifre!');\n}",
+              "explanation": "&&, birden fazla form alanını kontrol etmek için idealdir.",
+              "output": "Form geçerli, kayıt olabilirsiniz!"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir kullanıcının hem 18 yaşından büyük hem de 100 TL’den fazla bütçesi varsa 'Katılabilir', değilse 'Katılamaz' yazdıran bir kod yaz.",
+            "hint": "&& operatörünü kullan.",
+            "solution": "int yas = 20;\ndouble butce = 150.0;\nif (yas >= 18 && butce > 100.0) {\n  print('Katılabilir');\n} else {\n  print('Katılamaz');\n}",
+            "output": "Katılabilir"
+          },
+          "keyPoints": [
+            "&&: Tüm koşullar doğru olmalı",
+            "||: Bir koşul doğru olsa yeter",
+            "Parantezlerle öncelik belirle",
+            "Short-circuit: Dart, gereksiz kontrolleri atlar"
+          ],
+          "realWorldUse": "Bir uygulamada kullanıcı girişini doğrulamak veya bir indirim kampanyasının koşullarını kontrol etmek için && ve || kullanırsın."
+        },
+        {
+          "id": "logical_not",
+          "title": "DEĞİL (!): Mantığı Tersine Çevir",
+          "content": "! operatörü, bir koşulun tersini alır. true’yu false, false’u true yapar. Negatif koşulları kontrol etmek için harikadır!",
+          "codeExamples": [
+            {
+              "title": "Giriş ve Bakım Kontrolü",
+              "code": "bool girisYapildi = false;\nbool bakimModu = false;\n\nif (!girisYapildi) {\n  print('Lütfen giriş yap!');\n}\n\nif (!bakimModu) {\n  print('Sistem aktif, hoş geldin!');\n}\n\n// Karmaşık mantık\nif (!girisYapildi || bakimModu) {\n  print('Uygulamaya şu an erişemezsin.');\n} else {\n  print('Uygulamaya hoş geldin!');\n}\n\n// Form kontrolü\nString email = 'test';\nif (!email.contains('@')) {\n  print('Geçerli bir email gir!');\n} else {\n  print('Email geçerli.');\n}",
+              "explanation": "! operatörü, koşulları tersine çevirir. Negatif durumları kontrol etmek için çok kullanışlıdır.",
+              "output": "Lütfen giriş yap!\nSistem aktif, hoş geldin!\nUygulamaya şu an erişemezsin.\nGeçerli bir email gir!"
+            },
+            {
+              "title": "VIP Kontrolü",
+              "code": "bool vipUye = false;\ndouble fiyat = 100.0;\n\nif (!vipUye) {\n  print('Normal fiyat: $fiyat TL');\n} else {\n  print('VIP indirimli fiyat: ${fiyat * 0.8} TL');\n}",
+              "explanation": "! operatörü, belirli bir durumun tersini kontrol etmek için idealdir.",
+              "output": "Normal fiyat: 100.0 TL"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir kullanıcının premium üye olmadığını kontrol eden bir kod yaz. Premium değilse normal içerik, premium ise özel içerik göster.",
+            "hint": "! operatörünü kullan.",
+            "solution": "bool premiumUye = false;\nif (!premiumUye) {\n  print('Normal içeriğe erişiyorsun.');\n} else {\n  print('Özel premium içeriğe hoş geldin!');\n}",
+            "output": "Normal içeriğe erişiyorsun."
+          },
+          "keyPoints": [
+            "!: Mantıksal tersine çevirme",
+            "!true = false, !false = true",
+            "Negatif koşulları kontrol için ideal",
+            "Parantezlerle netleştir"
+          ],
+          "realWorldUse": "Bir uygulamada kullanıcının oturum açmadığını veya bir özelliğin kapalı olduğunu kontrol etmek için ! kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Mantıksal Operatörler",
+        "content": [
+          "Karmaşık koşullarda parantez kullanarak mantığı netleştir.",
+          "&& ve || ile kısa devre (short-circuit) avantajını kullan: Dart, gereksiz kontrolleri atlar.",
+          "! operatörünü dikkatli kullan, fazla tersine çevirme kafa karıştırabilir!"
+        ]
+      }
+    },
+    {
+      "id": "operator_precedence",
+      "title": "Operatör Önceliği: Dans Adımlarını Doğru Sırayla At!",
+      "content": "Tıpkı matematikteki işlem sırası gibi, Dart’ta da operatörlerin bir öncelik sırası var. Bu sırayı bilmek, kodunun doğru çalışmasını sağlar. Şüphede kalırsan, parantez kullanmak her zaman kurtarıcıdır!",
+      "subsections": [
+        {
+          "id": "precedence_rules",
+          "title": "Öncelik Kuralları: Kim Önce Dans Eder?",
+          "content": "Dart’ta operatörler, belirli bir sırayla işlenir. Çarpma ve bölme, toplama ve çıkarmadan önce gelir. Mantıksal operatörler ise karşılaştırmalardan sonra değerlendirilir. Haydi, bu sırayı öğrenelim!",
+          "codeExamples": [
+            {
+              "title": "Operatör Önceliği Örneği",
+              "code": "int a = 10;\nint b = 3;\nint c = 2;\n\n// Öncelik: * > +\nint sonuc1 = a + b * c; // 10 + (3 * 2) = 16\nint sonuc2 = (a + b) * c; // (10 + 3) * 2 = 26\n\nprint('a + b * c = $sonuc1');\nprint('(a + b) * c = $sonuc2');\n\n// Karşılaştırma ve mantıksal\nbool sonuc3 = a > b && b > c; // (10 > 3) && (3 > 2) = true\nbool sonuc4 = a > b || b < c; // (10 > 3) || (3 < 2) = true\n\nprint('a > b && b > c = $sonuc3');\nprint('a > b || b < c = $sonuc4');\n\n// Karmaşık ifade\nint x = 5;\nint y = 2;\ndouble z = 1.5;\n\n// Adım adım çözelim\nint karmasikSonuc = x + y * z.toInt() > 6 ? 100 : 50;\n// Adım 1: y * z.toInt() = 2 * 1 = 2\n// Adım 2: x + 2 = 5 + 2 = 7\n// Adım 3: 7 > 6 = true\n// Adım 4: true ? 100 : 50 = 100\n\nprint('Karmaşık sonuç: $karmasikSonuc');",
+              "explanation": "Operatör önceliği, işlemin hangi sırayla yapılacağını belirler. Parantez, sırayı değiştirmek için kullanılır. ? : (ternary) operatörü, koşullu ifadelerde sıkça kullanılır.",
+              "output": "a + b * c = 16\n(a + b) * c = 26\na > b && b > c = true\na > b || b < c = true\nKarmaşık sonuç: 100"
+            },
+            {
+              "title": "Öncelik ve Mantıksal Operatörler",
+              "code": "int yas = 16;\ndouble butce = 100.0;\nbool ogrenciMi = true;\n\nbool sonuc = yas >= 18 && butce >= 200.0 || ogrenciMi;\n// Adım 1: yas >= 18 = false\n// Adım 2: butce >= 200.0 = false\n// Adım 3: false && false = false\n// Adım 4: false || true = true\n\nprint('Sonuç: $sonuc');",
+              "explanation": "&&, ||’dan önce değerlendirilir. Parantez olmadan bile Dart, doğru sırayı takip eder.",
+              "output": "Sonuç: true"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Aşağıdaki ifadenin sonucunu hesaplayan bir kod yaz: 5 + 3 * 2 > 10 ? 50 : 25",
+            "hint": "* önce gelir, sonra +. ? : için parantez gerekebilir.",
+            "solution": "int sonuc = 5 + 3 * 2 > 10 ? 50 : 25;\n// 3 * 2 = 6, 5 + 6 = 11, 11 > 10 = true, sonuç = 50\nprint('Sonuç: $sonuc');",
+            "output": "Sonuç: 50"
+          },
+          "keyPoints": [
+            "*, /, % > +, -",
+            "Karşılaştırmalar > Mantıksal operatörler",
+            "Parantez her zaman önceliklidir",
+            "Şüphede kalırsan parantez kullan!"
+          ],
+          "realWorldUse": "Bir uygulamanın fiyat hesaplama formülünde (indirim + vergi) veya bir oyunda puanlama mantığında öncelik sırasını doğru uygulamak için bu kuralları kullanırsın."
+        }
+      ],
+      "bestPractices": {
+        "title": "Dost Tavsiyesi: Operatörleri Usta Gibi Kullan",
+        "content": "Operatörler güçlü araçlar, ama doğru kullanıldığında kodun parlar! İşte birkaç ipucu:\n1. **Basit tut**: Karmaşık ifadeler yerine, işlemleri adım adım yap.\n2. **Parantez kullan**: Önceliği netleştirmek için parantezden korkma.\n3. **Anlamlı isimler**: Değişken isimlerini açıklayıcı yap, böylece kodun kendi hikayesini anlatsın.\n4. **Hata kontrolü**: Sıfıra bölme gibi hataları önlemek için her zaman kontrol ekle.\n5. **Okunabilirlik**: Uzun koşulları ayrı değişkenlere bölerek kodu temiz tut.",
+        "examples": [
+          "Karmaşık: a + b * c > d && e < f → Parçalara böl",
+          "Değişken: toplamMaliyet yerine fiyat → Anlamlı isim",
+          "Parantez: a + b * c → (a + b) * c",
+          "Kontrol: sayi2 != 0 ? sayi1 / sayi2 : 'Hata'"
+        ]
+      }
+    }
+  ],
+  "quiz": {
+    "title": "Bilgini Test Et: Operatörlerle Dans!",
+    "description": "Bu modülde öğrendiklerini pekiştirmek için kısa bir quiz zamanı! Operatörlerin gücünü göster, hadi bakalım! 😎",
+    "questions": [
+      {
+        "id": 1,
+        "question": "22 % 7 işleminin sonucu nedir?",
+        "type": "multiple_choice",
+        "options": ["3", "1", "2", "0"],
+        "correctAnswer": 2,
+        "explanation": "% operatörü kalanı verir. 22 ÷ 7 = 3 kalan 1, yani sonuç 1."
+      },
+      {
+        "id": 2,
+        "question": "int x = 10; x += 5; x *= 3; işlemlerinden sonra x’in değeri nedir?",
+        "type": "multiple_choice",
+        "options": ["45", "30", "15", "50"],
+        "correctAnswer": 0,
+        "explanation": "x = 10, x += 5 → x = 15, x *= 3 → x = 45."
+      },
+      {
+        "id": 3,
+        "question": "Aşağıdaki ifadelerden hangisi doğrudur? (yas = 16, butce = 150.0)",
+        "type": "multiple_choice",
+        "options": [
+          "yas >= 18 && butce >= 100.0",
+          "yas < 18 || butce < 200.0",
+          "!(yas >= 18)",
+          "yas > 18 && butce > 100.0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "yas < 18 (true) || butce < 200.0 (true) = true. || için bir koşul doğru olsa yeter."
+      },
+      {
+        "id": 4,
+        "question": "5 + 3 * 2 işleminin sonucu nedir?",
+        "type": "multiple_choice",
+        "options": ["16", "11", "10", "13"],
+        "correctAnswer": 1,
+        "explanation": "* öncelikli: 3 * 2 = 6, 5 + 6 = 11."
+      }
+    ]
+  },
+  "practiceExercises": [
+    {
+      "title": "Mini Hesap Makinesi",
+      "description": "Kullanıcı dostu bir hesap makinesi kodla!",
+      "instructions": [
+        "İki double sayı tanımla.",
+        "Toplama, çıkarma, çarpma ve bölme işlemlerini yap.",
+        "Bölme işleminde sıfıra bölme kontrolü ekle.",
+        "Sonuçları güzel bir formatta yazdır."
+      ],
+      "starterCode": "// Sayıları tanımla\ndouble sayi1 = 15.5;\ndouble sayi2 = 4.0;\n\n// Hesaplamaları yap",
+      "solution": "double sayi1 = 15.5;\ndouble sayi2 = 4.0;\n\ndouble toplam = sayi1 + sayi2;\ndouble fark = sayi1 - sayi2;\ndouble carpim = sayi1 * sayi2;\n\nprint('$sayi1 + $sayi2 = ${toplam.toStringAsFixed(2)}');\nprint('$sayi1 - $sayi2 = ${fark.toStringAsFixed(2)}');\nprint('$sayi1 * $sayi2 = ${carpim.toStringAsFixed(2)}');\n\nif (sayi2 != 0) {\n  double bolum = sayi1 / sayi2;\n  print('$sayi1 / $sayi2 = ${bolum.toStringAsFixed(2)}');\n} else {\n  print('Sıfıra bölme hatası!');\n}",
+      "output": "15.5 + 4.0 = 19.50\n15.5 - 4.0 = 11.50\n15.5 * 4.0 = 62.00\n15.5 / 4.0 = 3.88",
+      "difficulty": "beginner"
+    },
+    {
+      "title": "Yaş ve Bütçe ile Seyahat Planı",
+      "description": "Yaş ve bütçeye göre seyahat paketi öneren bir kod yaz.",
+      "instructions": [
+        "Yaş (int) ve bütçe (double) değişkenleri tanımla.",
+        "Mantıksal operatörler kullanarak koşulları kontrol et.",
+        "18-25 yaş ve 200+ TL bütçe için 'Gençlik Paketi'.",
+        "26+ yaş ve 500+ TL bütçe için 'Lüks Paketi'.",
+        "Diğer durumlar için 'Ekonomik Paketi' öner."
+      ],
+      "starterCode": "int yas = 22;\ndouble butce = 300.0;\n\n// Seyahat planı kodunu yaz",
+      "solution": "int yas = 22;\ndouble butce = 300.0;\n\nif (yas >= 18 && yas <= 25 && butce >= 200.0) {\n  print('Gençlik Paketi senin için ideal!');\n} else if (yas >= 26 && butce >= 500.0) {\n  print('Lüks Paketi ile seyahat et!');\n} else {\n  print('Ekonomik Paketi öneriyoruz.');\n}",
+      "output": "Gençlik Paketi senin için ideal!",
+      "difficulty": "beginner"
+    },
+    {
+      "title": "Sepet Yönetim Sistemi",
+      "description": "Bir alışveriş sepetindeki ürün sayısını yöneten bir kod yaz.",
+      "instructions": [
+        "Ürün adedini int olarak tanımla (başlangıç: 0).",
+        "++ ve -- operatörleriyle ürünleri ekle ve çıkar.",
+        "Ürün adedi 0’dan küçük olamaz, kontrol ekle.",
+        "Son durumu yazdır."
+      ],
+      "starterCode": "int urunAdedi = 0;\n\n// Sepet yönetim kodunu yaz",
+      "solution": "int urunAdedi = 0;\n\nprint('Başlangıç: $urunAdedi ürün');\n\nurunAdedi++;\nurunAdedi++;\nprint('Ürün eklendi: $urunAdedi ürün');\n\nurunAdedi--;\nif (urunAdedi >= 0) {\n  print('Ürün çıkarıldı: $urunAdedi ürün');\n} else {\n  print('Sepet zaten boş!');\n}",
+      "output": "Başlangıç: 0 ürün\nÜrün eklendi: 2 ürün\nÜrün çıkarıldı: 1 ürün",
+      "difficulty": "beginner"
+    }
+  ],
+  "summary": {
+    "title": "Tebrikler, Operatörlerle Dans Ettin!",
+    "content": "Bu modülde, Dart’ın sihirli operatörlerini öğrendin! Aritmetik operatörlerle sayılarla oynadın, atama operatörleriyle kodunu kısalttın, karşılaştırma operatörleriyle kararlar verdin ve mantıksal operatörlerle zekice mantıklar kurdun. Operatör önceliğiyle de dans adımlarını doğru sırayla attın! 💃\n\nBu bilgiler, Flutter’da kullanıcı arayüzlerini dinamik hale getirmek, koşullu işlemler yapmak ve verilerle çalışmak için temel oluşturdu. Bir sonraki modülde, kontrol akışıyla programına yön vermeyi öğreneceksin. Hazır mısın, kod şefi? 😎",
+    "keyTakeaways": [
+      "Aritmetik: +, -, *, /, ~/, % ile matematik sihri",
+      "Atama: =, +=, -=, *=, ++, -- ile kısa yollar",
+      "Karşılaştırma: ==, !=, >, <, >=, <= ile kararlar",
+      "Mantıksal: &&, ||, ! ile zeki mantıklar",
+      "Öncelik: Parantezle sırayı netleştir"
+    ],
+    "nextModule": "Kontrol Akışı: Programa Yön Verme Sanatı",
+    "motivationalQuote": "Her operatör, koduna bir sihir katar. Sen bu sihri yaratansın! Devam et! ✨"
+  },
+  "resources": {
+    "title": "Ek Kaynaklar: Operatör Maceranı Güçlendir",
+    "links": [
+      {
+        "name": "Dart Resmi Dokümantasyon: Operatörler",
+        "url": "https://dart.dev/language/operators",
+        "description": "Dart’ın operatörleri hakkında resmi ve ayrıntılı rehber."
+      },
+      {
+        "name": "DartPad",
+        "url": "https://dartpad.dev",
+        "description": "Operatörleri test etmek için çevrimiçi Dart editörü."
+      },
+      {
+        "name": "Flutter Official YouTube: Dart Temelleri",
+        "url": "https://www.youtube.com/flutter",
+        "description": "Flutter ekibinin Dart ve operatörler üzerine videoları."
+      },
+      {
+        "name": "Stack Overflow: Dart Operatör Soruları",
+        "url": "https://stackoverflow.com/questions/tagged/dart",
+        "description": "Operatörlerle ilgili sorular sorup cevap bulabileceğin topluluk."
+      }
+    ]
+  }
+}

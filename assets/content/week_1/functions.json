@@ -1,0 +1,401 @@
+{
+  "moduleId": "functions",
+  "title": "Fonksiyonlar: Kodunun Süper Güçlü Alet Çantası",
+  "week": 1,
+  "order": 5,
+  "estimatedTime": "60 dakika",
+  "difficulty": "beginner",
+  "description": "Merhaba, kod sihirbazı! 🚀 Kod yazarken aynı işi tekrar tekrar yapmak yerine, neden bir kere yazıp her yerde kullanasın? İşte fonksiyonlar, tam da bu yüzden var! Onlar, kodunun süper güçlü alet çantası gibidir. Bir kere oluşturursun, sonra her ihtiyaç duyduğunda kullanırsın. Bu modülde, Dart’ta fonksiyonların nasıl çalıştığını, nasıl yazıldığını ve Flutter’da nasıl hayat kurtardığını öğreneceksin. Hazırsan, kendi alet çantanı oluşturmaya başlayalım!",
+  "introduction": {
+    "title": "Giriş: Koduna Sihir Kat!",
+    "content": "Selam, sevgili öğrenme yolcusu! 😄 Flutter ile harika uygulamalar yapma macerasında yeni bir duraktayız. Önce değişkenlerle bilgiyi sakladın, operatörlerle dans ettirdin, kontrol akışıyla yön verdin. Şimdi sıra, kodunu düzenli, tekrar kullanılabilir ve güçlü hale getirmekte! İşte burada **fonksiyonlar** devreye giriyor.\n\nFonksiyonları, bir mobilya montajında elindeki tornavida gibi düşün. 🛠️ Her vida sıkışında tornavidayı baştan aramazsın, değil mi? Fonksiyonlar da öyle: bir kere yazarsın, sonra her yerde kullanırsın. Bir selamlama mesajı göstermek, iki sayıyı toplamak ya da bir kullanıcının bilgilerini düzenlemek... Hepsi bir fonksiyonla halledilir!\n\nBu modülde, **void** fonksiyonlarla iş yapmayı, **değer döndüren** fonksiyonlarla sonuç üretmeyi, **isimlendirilmiş parametrelerle** kodunu şık hale getirmeyi ve **opsiyonel parametrelerle** esneklik kazanmayı öğreneceksin. Ayrıca, Flutter’da bu fonksiyonların nasıl kullanıcı dostu arayüzler oluşturduğunu keşfedeceksin. Haydi, alet çantanı doldurmaya başlayalım! 🪄",
+    "keyPoints": [
+      "Fonksiyonlar = Kodunun tekrar kullanılabilir tornavidaları",
+      "Kod tekrarını önler, düzeni artırır",
+      "Parametreler = Fonksiyonlara özel talimatlar",
+      "Flutter’da fonksiyonlar = Dinamik ve akıllı uygulamalar",
+      "Test etmesi ve bakımı kolay kod"
+    ],
+    "motivationalQuote": "Fonksiyonlar, kodunun süper kahramanlarıdır. Bir kere yaz, her yerde kullan! Hadi, kendi süper kahramanlarını yarat! 🌟"
+  },
+  "sections": [
+    {
+      "id": "basic_functions",
+      "title": "Temel Fonksiyonlar: Alet Çantanın İlk Araçları",
+      "content": "Fonksiyonlar, kodunun yapı taşlarıdır. Belirli bir işi yapar ve tekrar kullanılabilir hale getirir. Basit bir selamlama mesajından karmaşık hesaplamalara kadar her şey için fonksiyon yazabilirsin. Bu bölümde, en temel fonksiyon türlerini keşfedeceğiz. Hazırsan, alet çantanı aç!",
+      "subsections": [
+        {
+          "id": "void_functions",
+          "title": "void Fonksiyonlar: İş Yap, Sonuç Sorulmaz!",
+          "content": "**void** fonksiyonlar, bir işi yapar ama sana bir değer döndürmez. Mesela, bir mesaj yazdırmak, bir dosyaya veri kaydetmek veya bir animasyonu başlatmak için idealdir. Flutter’da, kullanıcı arayüzünü güncellemek veya olayları tetiklemek için sıkça kullanılırlar. Haydi, bir void fonksiyonla başlayalım!",
+          "codeExamples": [
+            {
+              "title": "Basit Selamlama",
+              "code": "void selamla() {\n  print('Merhaba, Flutter dünyasına hoş geldin! 🌍');\n}\n\nvoid kisiselSelamla(String isim) {\n  print('Hey $isim, bugün harika şeyler yapacağız! 😎');\n}\n\nvoid main() {\n  selamla();\n  kisiselSelamla('Zeynep');\n  kisiselSelamla('Can');\n}",
+              "explanation": "void fonksiyonlar, bir iş yapar ama sonuç döndürmez. Parametreler (örneğin, isim), fonksiyona özel veri sağlar. Flutter’da, örneğin bir butona basıldığında mesaj göstermek için böyle fonksiyonlar kullanırsın.",
+              "output": "Merhaba, Flutter dünyasına hoş geldin! 🌍\nHey Zeynep, bugün harika şeyler yapacağız! 😎\nHey Can, bugün harika şeyler yapacağız! 😎"
+            },
+            {
+              "title": "Sepet Durumu Gösterme",
+              "code": "void sepetDurumu(List<String> sepet) {\n  if (sepet.isEmpty) {\n    print('Sepet boş, alışverişe başla! 🛒');\n  } else {\n    print('Sepetinde ${sepet.length} ürün var:');\n    for (String urun in sepet) {\n      print('✓ $urun');\n    }\n  }\n}\n\nvoid main() {\n  List<String> sepet = ['Telefon', 'Kulaklık'];\n  sepetDurumu(sepet);\n  print('---');\n  List<String> bosSepet = [];\n  sepetDurumu(bosSepet);\n}",
+              "explanation": "Bu void fonksiyon, bir alışveriş sepetinin içeriğini yazdırır. Liste parametresiyle çalışır ve Flutter’da bir sepet ekranını güncellemek için kullanılabilir.",
+              "output": "Sepetinde 2 ürün var:\n✓ Telefon\n✓ Kulaklık\n---\nSepet boş, alışverişe başla! 🛒"
+            },
+            {
+              "title": "Kullanıcı Bildirimi",
+              "code": "void bildirimiGoster(String mesaj, bool onemliMi) {\n  String onemSeviyesi = onemliMi ? 'ÖNEMLİ' : 'Normal';\n  print('[$onemSeviyesi] $mesaj');\n}\n\nvoid main() {\n  bildirimiGoster('Yeni bir güncelleme mevcut!', true);\n  bildirimiGoster('Profiliniz kaydedildi.', false);\n}",
+              "explanation": "Bu fonksiyon, bir bildirim mesajını önem seviyesine göre yazdırır. Flutter’da bildirim veya toast mesajları göstermek için benzer bir yapı kullanabilirsin.",
+              "output": "[ÖNEMLİ] Yeni bir güncelleme mevcut!\n[Normal] Profiliz kaydedildi."
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Kullanıcının adını ve yaşını alıp bir hoş geldin mesajı yazdıran bir void fonksiyon yaz.",
+            "hint": "void fonksiyon(String ad, int yas) şeklinde tanımla ve print kullan.",
+            "solution": "void hosGeldin(String ad, int yas) {\n  print('Merhaba $ad! $yas yaşında Flutter yolculuğuna hoş geldin!');\n}\n\nvoid main() {\n  hosGeldin('Ayşe', 22);\n}",
+            "output": "Merhaba Ayşe! 22 yaşında Flutter yolculuğuna hoş geldin!"
+          },
+          "keyPoints": [
+            "void: Değer döndürmez, sadece iş yapar",
+            "Parametreler parantez içinde tanımlanır",
+            "Fonksiyon adıyla çağırılır",
+            "Flutter’da UI güncellemeleri için sık kullanılır",
+            "Tekrar kullanılabilir ve düzenli kod sağlar"
+          ],
+          "realWorldUse": "Flutter’da bir butona basıldığında bir snackbar göstermek veya bir formu sıfırlamak için void fonksiyonlar kullanırsın."
+        },
+        {
+          "id": "return_functions",
+          "title": "Değer Döndüren Fonksiyonlar: Sonuç Üreten Kahramanlar",
+          "content": "Bazı fonksiyonlar, bir iş yaptıktan sonra sana bir sonuç verir. Mesela, iki sayıyı topladıktan sonra sonucu döndürebilir veya bir metni büyük harfe çevirip sana verebilir. Flutter’da, veri hesaplamaları veya formatlamalar için değer döndüren fonksiyonlar çok önemlidir!",
+          "codeExamples": [
+            {
+              "title": "Matematiksel Hesaplamalar",
+              "code": "int topla(int a, int b) {\n  return a + b;\n}\n\ndouble carp(double x, double y) => x * y;\n\nString durumBelirle(double not) {\n  if (not >= 60) {\n    return 'Geçti';\n  } else {\n    return 'Kaldı';\n  }\n}\n\nvoid main() {\n  int toplamSonuc = topla(7, 4);\n  double carpimSonuc = carp(5.5, 2.0);\n  String sinavDurumu = durumBelirle(75.0);\n\n  print('7 + 4 = $toplamSonuc');\n  print('5.5 * 2 = $carpimSonuc');\n  print('Sınav durumu: $sinavDurumu');\n}",
+              "explanation": "return, fonksiyonun sonucunu çağırana gönderir. => (ok operatörü), tek satırlık fonksiyonlar için kısa bir yazım sağlar.",
+              "output": "7 + 4 = 11\n5.5 * 2 = 11.0\nSınav durumu: Geçti"
+            },
+            {
+              "title": "Metin İşleme",
+              "code": "String formatliAd(String ad, String soyad) => '$ad $soyad';\n\nString kisaMetin(String metin, int maxUzunluk) {\n  if (metin.length <= maxUzunluk) {\n    return metin;\n  }\n  return '${metin.substring(0, maxUzunluk)}...';\n}\n\nvoid main() {\n  String tamAd = formatliAd('Elif', 'Yılmaz');\n  String kisaltilmis = kisaMetin('Flutter çok eğlenceli!', 10);\n\n  print('Tam ad: $tamAd');\n  print('Kısaltılmış metin: $kisaltilmis');\n}",
+              "explanation": "Bu fonksiyonlar, metinleri işleyip sonuç döndürür. Flutter’da, kullanıcı adlarını formatlamak veya metinleri kırpmak için benzer fonksiyonlar kullanırsın.",
+              "output": "Tam ad: Elif Yılmaz\nKısaltılmış metin: Flutter çok..."
+            },
+            {
+              "title": "Hata Kontrolü ile Dönen Fonksiyon",
+              "code": "double bol(double a, double b) {\n  if (b == 0) {\n    print('Hata: Sıfıra bölme!');\n    return 0.0;\n  }\n  return a / b;\n}\n\nvoid main() {\n  double sonuc1 = bol(10.0, 2.0);\n  double sonuc2 = bol(10.0, 0.0);\n\n  print('10 / 2 = $sonuc1');\n  print('10 / 0 = $sonuc2');\n}",
+              "explanation": "Fonksiyonlar, hata durumlarını kontrol edebilir ve uygun bir değer döndürebilir. Flutter’da güvenli hesaplamalar için bu yaklaşım çok önemlidir.",
+              "output": "10 / 2 = 5.0\nHata: Sıfıra bölme!\n10 / 0 = 0.0"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "İki sayının ortalamasını hesaplayan ve sonucu double olarak döndüren bir fonksiyon yaz.",
+            "hint": "(a + b) / 2 formülünü kullan ve double döndür.",
+            "solution": "double ortalama(double a, double b) => (a + b) / 2;\n\nvoid main() {\n  double sonuc = ortalama(8.0, 12.0);\n  print('Ortalama: ${sonuc.toStringAsFixed(2)}');\n}",
+            "output": "Ortalama: 10.00"
+          },
+          "keyPoints": [
+            "return: Fonksiyonun sonucunu döndürür",
+            "Dönen değerin tipi belirtilmeli",
+            "=> ile tek satırlık kısa yazım",
+            "Flutter’da veri işleme için sık kullanılır",
+            "Hata kontrolü ile güvenli kod"
+          ],
+          "realWorldUse": "Flutter’da bir formdaki verileri işlemek (örneğin, kullanıcı yaşını hesaplamak) veya bir API yanıtını formatlamak için değer döndüren fonksiyonlar kullanırsın."
+        },
+        {
+          "id": "named_parameters",
+          "title": "İsimlendirilmiş Parametreler: Şık ve Okunabilir Kod",
+          "content": "Bazen fonksiyonlara çok sayıda parametre geçirmek gerekir. **İsimlendirilmiş parametreler**, bu parametreleri isimleriyle vermeni sağlar ve kodunu daha okunabilir yapar. Flutter’da widget oluştururken sıkça kullanılır!",
+          "codeExamples": [
+            {
+              "title": "Kullanıcı Profili",
+              "code": "void profilOlustur({\n  required String ad,\n  required int yas,\n  String? sehir,\n  bool aktifMi = true,\n}) {\n  print('Profil Bilgileri:');\n  print('Ad: $ad');\n  print('Yaş: $yas');\n  if (sehir != null) {\n    print('Şehir: $sehir');\n  } else {\n    print('Şehir: Belirtilmemiş');\n  }\n  print('Durum: ${aktifMi ? \"Aktif\" : \"Pasif\"}');\n  print('---');\n}\n\nvoid main() {\n  profilOlustur(ad: 'Ali', yas: 25);\n  profilOlustur(ad: 'Ayşe', yas: 30, sehir: 'İstanbul');\n  profilOlustur(ad: 'Mehmet', yas: 22, sehir: 'Ankara', aktifMi: false);\n}",
+              "explanation": "İsimlendirilmiş parametreler, {} içinde tanımlanır. required, zorunlu parametreleri belirtir; ? opsiyonel parametreleri gösterir. Varsayılan değerler atanabilir.",
+              "output": "Profil Bilgileri:\nAd: Ali\nYaş: 25\nŞehir: Belirtilmemiş\nDurum: Aktif\n---\nProfil Bilgileri:\nAd: Ayşe\nYaş: 30\nŞehir: İstanbul\nDurum: Aktif\n---\nProfil Bilgileri:\nAd: Mehmet\nYaş: 22\nŞehir: Ankara\nDurum: Pasif\n---"
+            },
+            {
+              "title": "Sipariş Özeti",
+              "code": "String siparisOzeti({\n  required String urun,\n  required double fiyat,\n  int adet = 1,\n  double indirimOrani = 0.0,\n}) {\n  double toplam = fiyat * adet;\n  double indirim = toplam * indirimOrani;\n  double sonFiyat = toplam - indirim;\n\n  return '$adet adet $urun: ${sonFiyat.toStringAsFixed(2)} TL (İndirim: ${indirim.toStringAsFixed(2)} TL)';\n}\n\nvoid main() {\n  print(siparisOzeti(urun: 'Telefon', fiyat: 5000.0));\n  print(siparisOzeti(urun: 'Kulaklık', fiyat: 200.0, adet: 3, indirimOrani: 0.1));\n}",
+              "explanation": "Bu fonksiyon, bir sipariş özetini döndürür. İsimlendirilmiş parametreler, Flutter’da widget parametreleri gibi okunabilirliği artırır.",
+              "output": "1 adet Telefon: 5000.00 TL (İndirim: 0.00 TL)\n3 adet Kulaklık: 540.00 TL (İndirim: 60.00 TL)"
+            },
+            {
+              "title": "Esnek Mesaj Formatlama",
+              "code": "String formatliMesaj({\n  required String baslik,\n  String? icerik,\n  bool onemliMi = false,\n}) => onemliMi ? '[ÖNEMLİ] $baslik: ${icerik ?? \"Boş\"}' : '$baslik: ${icerik ?? \"Boş\"}';\n\nvoid main() {\n  print(formatliMesaj(baslik: 'Güncelleme', icerik: 'Yeni özellikler eklendi!'));\n  print(formatliMesaj(baslik: 'Hata', onemliMi: true));\n  print(formatliMesaj(baslik: 'Bilgi', icerik: 'Profil güncellendi.', onemliMi: false));\n}",
+              "explanation": "İsimlendirilmiş parametrelerle kısa ve esnek bir fonksiyon yazılabilir. Flutter’da bildirim mesajları için bu yapı çok kullanışlıdır.",
+              "output": "Güncelleme: Yeni özellikler eklendi!\n[ÖNEMLİ] Hata: Boş\nBilgi: Profil güncellendi."
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir kullanıcının bilgilerini formatlayan bir isimlendirilmiş parametreli fonksiyon yaz. Ad (zorunlu), yaş (opsiyonel), şehir (opsiyonel) alsın ve formatlı bir string döndürsün.",
+            "hint": "{required String ad, int? yas, String? sehir} kullan.",
+            "solution": "String kullaniciBilgi({\n  required String ad,\n  int? yas,\n  String? sehir,\n}) {\n  String mesaj = 'Ad: $ad';\n  if (yas != null) {\n    mesaj += ', Yaş: $yas';\n  }\n  if (sehir != null) {\n    mesaj += ', Şehir: $sehir';\n  }\n  return mesaj;\n}\n\nvoid main() {\n  print(kullaniciBilgi(ad: 'Elif'));\n  print(kullaniciBilgi(ad: 'Can', yas: 20, sehir: 'İzmir'));\n}",
+            "output": "Ad: Elif\nAd: Can, Yaş: 20, Şehir: İzmir"
+          },
+          "keyPoints": [
+            "{} ile isimlendirilmiş parametreler tanımlanır",
+            "required: Zorunlu parametreler",
+            "?: Opsiyonel parametreler",
+            "Varsayılan değerlerle esneklik sağlanır",
+            "Flutter’da widget parametreleri için ideal"
+          ],
+          "realWorldUse": "Flutter’da bir widget oluştururken (örneğin, Text veya Card widget’ı), isimlendirilmiş parametreler kullanarak okunabilir ve esnek kod yazarsın."
+        },
+        {
+          "id": "optional_parameters",
+          "title": "Opsiyonel Parametreler: Esnek ve Kullanıcı Dostu",
+          "content": "Bazı parametreler zorunlu olmayabilir. **Opsiyonel parametreler**, fonksiyonu çağırırken bu parametreleri atlamanı sağlar. [] içinde tanımlanır ve varsayılan değerler atanabilir. Flutter’da esnek API tasarımları için sıkça kullanılır!",
+          "codeExamples": [
+            {
+              "title": "Opsiyonel Parametrelerle Mesaj",
+              "code": "void mesajGoster(String mesaj, [bool onemliMi = false, String? etiket]) {\n  String sonuc = onemliMi ? '[ÖNEMLİ] $mesaj' : mesaj;\n  if (etiket != null) {\n    sonuc += ' ($etiket)';\n  }\n  print(sonuc);\n}\n\nvoid main() {\n  mesajGoster('Merhaba!');\n  mesajGoster('Güncelleme var!', true);\n  mesajGoster('Profil kaydedildi.', false, 'Bilgi');\n}",
+              "explanation": "[] içinde opsiyonel parametreler tanımlanır. Varsayılan değerler atanabilir ve null kontrolü yapılabilir.",
+              "output": "Merhaba!\n[ÖNEMLİ] Güncelleme var!\nProfil kaydedildi. (Bilgi)"
+            },
+            {
+              "title": "Sepet Hesaplama",
+              "code": "double sepetToplami(double birimFiyat, [int adet = 1, double indirimOrani = 0.0]) {\n  double toplam = birimFiyat * adet;\n  double indirim = toplam * indirimOrani;\n  return toplam - indirim;\n}\n\nvoid main() {\n  print('1 ürün: ${sepetToplami(100.0).toStringAsFixed(2)} TL');\n  print('3 ürün, %10 indirim: ${sepetToplami(100.0, 3, 0.1).toStringAsFixed(2)} TL');\n}",
+              "explanation": "Opsiyonel parametreler, sepet hesaplamalarında esneklik sağlar. Flutter’da dinamik fiyat hesaplamaları için kullanışlıdır.",
+              "output": "1 ürün: 100.00 TL\n3 ürün, %10 indirim: 270.00 TL"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir fonksiyon yaz ki, bir ürünün fiyatını ve opsiyonel olarak adedini ve KDV oranını (%18 varsayılan) alsın, toplam fiyatı döndürsün.",
+            "hint": "[int adet = 1, double kdvOrani = 0.18] kullan.",
+            "solution": "double toplamFiyat(double birimFiyat, [int adet = 1, double kdvOrani = 0.18]) {\n  double toplam = birimFiyat * adet;\n  double kdv = toplam * kdvOrani;\n  return toplam + kdv;\n}\n\nvoid main() {\n  print('Toplam: ${toplamFiyat(100.0).toStringAsFixed(2)} TL');\n  print('3 ürün, %20 KDV: ${toplamFiyat(100.0, 3, 0.2).toStringAsFixed(2)} TL');\n}",
+            "output": "Toplam: 118.00 TL\n3 ürün, %20 KDV: 360.00 TL"
+          },
+          "keyPoints": [
+            "[] ile opsiyonel parametreler tanımlanır",
+            "Varsayılan değerler atanabilir",
+            "Sıralı olmalı, null kontrolü gerekir",
+            "Flutter’da esnek API’ler için kullanılır"
+          ],
+          "realWorldUse": "Flutter’da bir form widget’ına opsiyonel stil parametreleri (renk, boyut) eklemek için opsiyonel parametreler kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Fonksiyonlarla Usta Gibi Çalış",
+        "content": [
+          "Fonksiyonları küçük ve tek bir işe odaklanmış tut. Örneğin, sadece hesaplama yap veya sadece mesaj göster.",
+          "Anlamlı isimler kullan: topla, goster, formatla gibi isimler kodu açıklayıcı yapar.",
+          "İsimlendirilmiş parametreler, Flutter’da widget yazarken okunabilirliği artırır.",
+          "Hata kontrolü ekle (örneğin, sıfıra bölme).",
+          "Kısa fonksiyonlar için => kullan, ama okunabilirliği koru."
+        ]
+      }
+    },
+    {
+      "id": "advanced_functions",
+      "title": "Gelişmiş Fonksiyonlar: Alet Çantanı Güçlendir",
+      "content": "Temel fonksiyonları öğrendin, şimdi alet çantanı biraz daha güçlendirelim! **Anonim fonksiyonlar**, **fonksiyon parametreleri** ve **kapsam (scope)** gibi konuları keşfedeceğiz. Bu özellikler, Flutter’da dinamik ve esnek kod yazmak için çok önemli!",
+      "subsections": [
+        {
+          "id": "anonymous_functions",
+          "title": "Anonim Fonksiyonlar: İsimsiz Süper Kahramanlar",
+          "content": "Bazen bir fonksiyonu sadece bir kez kullanmak istersin ve ona isim vermeye gerek duymazsın. **Anonim fonksiyonlar** (lambda veya closure), bu durumda devreye girer. Flutter’da olay işleyicileri (event handlers) için sıkça kullanılır!",
+          "codeExamples": [
+            {
+              "title": "Anonim Fonksiyonla Liste İşleme",
+              "code": "void main() {\n  List<int> sayilar = [1, 2, 3, 4, 5];\n\n  // forEach ile anonim fonksiyon\n  sayilar.forEach((sayi) {\n    print('Sayı: $sayi, Karesi: ${sayi * sayi}');\n  });\n\n  // Kısa yazım\n  sayilar.forEach((sayi) => print('Kısa: $sayi'));\n}",
+              "explanation": "Anonim fonksiyonlar, isim vermeden tanımlanır ve genellikle listelerle çalışırken (forEach gibi) kullanılır. Flutter’da buton tıklama olaylarında sıkça görürsün.",
+              "output": "Sayı: 1, Karesi: 1\nSayı: 2, Karesi: 4\nSayı: 3, Karesi: 9\nSayı: 4, Karesi: 16\nSayı: 5, Karesi: 25\nKısa: 1\nKısa: 2\nKısa: 3\nKısa: 4\nKısa: 5"
+            },
+            {
+              "title": "Olay Simülasyonu",
+              "code": "void butonaBas(String butonAdi, Function() onBas) {\n  print('$butonAdi butonuna basıldı!');\n  onBas();\n}\n\nvoid main() {\n  butonaBas('Giriş', () {\n    print('Giriş işlemi başlatılıyor...');\n  });\n\n  butonaBas('Kayıt Ol', () => print('Kayıt ekranına yönlendiriliyorsun!'));\n}",
+              "explanation": "Anonim fonksiyonlar, Flutter’da butonların onPressed gibi olay işleyicilerinde sıkça kullanılır. Tek seferlik işlemler için idealdir.",
+              "output": "Giriş butonuna basıldı!\nGiriş işlemi başlatılıyor...\nKayıt Ol butonuna basıldı!\nKayıt ekranına yönlendiriliyorsun!"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir liste içindeki çift sayıları yazdıran bir anonim fonksiyon yaz ve forEach ile kullan.",
+            "hint": "sayilar.forEach((sayi) => ...) kullan ve % operatörünü kontrol et.",
+            "solution": "void main() {\n  List<int> sayilar = [1, 2, 3, 4, 5, 6];\n  sayilar.forEach((sayi) {\n    if (sayi % 2 == 0) {\n      print('Çift sayı: $sayi');\n    }\n  });\n}",
+            "output": "Çift sayı: 2\nÇift sayı: 4\nÇift sayı: 6"
+          },
+          "keyPoints": [
+            "İsimsiz fonksiyonlar, tek seferlik işlemler için",
+            "() => ile kısa yazım",
+            "forEach ve olay işleyicilerinde sık kullanılır",
+            "Flutter’da UI olayları için ideal"
+          ],
+          "realWorldUse": "Flutter’da bir butona tıklama olayını (onPressed) veya bir listeyi filtrelemeyi anonim fonksiyonlarla halledersin."
+        },
+        {
+          "id": "function_parameters",
+          "title": "Fonksiyon Parametreleri: Fonksiyon İçinde Fonksiyon",
+          "content": "Fonksiyonlar, başka fonksiyonları parametre olarak alabilir. Bu, koduna inanılmaz bir esneklik katar! Flutter’da, callback fonksiyonları (örneğin, bir işlem tamamlandığında çağrılan fonksiyonlar) için sıkça kullanılır.",
+          "codeExamples": [
+            {
+              "title": "Callback ile İşlem",
+              "code": "void islemiTamamla(String islem, void Function(String) onTamam) {\n  print('$islem işlemi yapılıyor...');\n  onTamam('İşlem başarılı!');\n}\n\nvoid main() {\n  islemiTamamla('Veri kaydetme', (mesaj) {\n    print('Sonuç: $mesaj');\n  });\n\n  islemiTamamla('API çağrısı', (mesaj) => print('API sonucu: $mesaj'));\n}",
+              "explanation": "Fonksiyon parametreleri, başka bir fonksiyonu çağırırken dinamik davranış sağlar. Flutter’da, bir API çağrısı tamamlandığında sonucu işlemek için kullanılır.",
+              "output": "Veri kaydetme işlemi yapılıyor...\nSonuç: İşlem başarılı!\nAPI çağrısı yapılıyor...\nAPI sonucu: İşlem başarılı!"
+            },
+            {
+              "title": "Hesaplama Esnekliği",
+              "code": "double hesapla(double a, double b, double Function(double, double) islem) {\n  return islem(a, b);\n}\n\nvoid main() {\n  double toplama = hesapla(5.0, 3.0, (a, b) => a + b);\n  double cikarma = hesapla(5.0, 3.0, (a, b) => a - b);\n\n  print('Toplama: $toplama');\n  print('Çıkarma: $cikarma');\n}",
+              "explanation": "Bu fonksiyon, başka bir fonksiyonu parametre olarak alarak esnek hesaplamalar yapar. Flutter’da farklı hesaplama türlerini desteklemek için kullanışlıdır.",
+              "output": "Toplama: 8.0\nÇıkarma: 2.0"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Bir fonksiyon yaz ki, bir sayıyı işleyen ve sonucu döndüren bir fonksiyon parametresi alsın. Örneğin, sayıyı kare alma veya iki katına çıkarma.",
+            "hint": "int Function(int) islem parametresi kullan.",
+            "solution": "int islemYap(int sayi, int Function(int) islem) {\n  return islem(sayi);\n}\n\nvoid main() {\n  int kare = islemYap(5, (n) => n * n);\n  int ikiKat = islemYap(5, (n) => n * 2);\n  print('Kare: $kare, İki kat: $ikiKat');\n}",
+            "output": "Kare: 25, İki kat: 10"
+          },
+          "keyPoints": [
+            "Fonksiyonlar parametre olarak alınabilir",
+            "Callback’ler için idealdir",
+            "Flutter’da olay işleme için sık kullanılır",
+            "Esnek ve dinamik kod sağlar"
+          ],
+          "realWorldUse": "Flutter’da bir butonun tıklama olayında (onPressed) veya bir API yanıtını işlerken callback fonksiyonları kullanırsın."
+        }
+      ],
+      "tips": {
+        "title": "Dost Tavsiyeleri: Gelişmiş Fonksiyonlar",
+        "content": [
+          "Anonim fonksiyonları kısa ve net tut, karmaşık işlemler için normal fonksiyonlar kullan.",
+          "Callback fonksiyonları, Flutter’da asenkron işlemleri (örneğin, veri çekme) yönetmek için harikadır.",
+          "Fonksiyon parametreleri tanımlarken tipleri açıkça belirt, böylece hata riskini azaltırsın."
+        ]
+      }
+    }
+  ],
+  "quiz": {
+    "title": "Bilgini Test Et: Fonksiyonlarla Usta mısın?",
+    "description": "Bu modülde öğrendiklerini pekiştirmek için kısa bir quiz zamanı! Fonksiyonların gücünü göster, hadi bakalım! 😎",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Aşağıdaki fonksiyon tanımı doğru mudur?\n\nint hesapla(int a, b) {\n  return a + b;\n}",
+        "type": "multiple_choice",
+        "options": [
+          "Doğru",
+          "Yanlış, b parametresinin tipi eksik",
+          "Yanlış, return eksik",
+          "Yanlış, süslü parantez eksik"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Her parametrenin tipini belirtmek gerekir. Doğrusu: int hesapla(int a, int b)"
+      },
+      {
+        "id": 2,
+        "question": "Aşağıdaki kodun çıktısı nedir?\n\nvoid selamla(String ad) => print('Merhaba $ad');\nvoid main() { selamla('Elif'); }",
+        "type": "multiple_choice",
+        "options": [
+          "Merhaba Elif",
+          "Elif",
+          "Hata",
+          "Boş"
+        ],
+        "correctAnswer": 0,
+        "explanation": "selamla fonksiyonu, ad parametresini alır ve 'Merhaba Elif' yazdırır."
+      },
+      {
+        "id": 3,
+        "question": "İsimlendirilmiş parametreler için hangi sembol kullanılır?",
+        "type": "multiple_choice",
+        "options": ["{}", "[]", "()", "<>"],
+        "correctAnswer": 0,
+        "explanation": "İsimlendirilmiş parametreler {} içinde tanımlanır."
+      },
+      {
+        "id": 4,
+        "question": "Aşağıdaki kodun çıktısı nedir?\n\nString bilgi({required String ad, int? yas}) => '$ad, ${yas ?? 0}';\nvoid main() { print(bilgi(ad: 'Can')); }",
+        "type": "multiple_choice",
+        "options": [
+          "Can, 0",
+          "Can",
+          "Hata",
+          "Boş"
+        ],
+        "correctAnswer": 0,
+        "explanation": "yas opsiyonel ve null olduğu için ?? operatörü 0 döndürür. Çıktı: 'Can, 0'."
+      }
+    ]
+  },
+  "practiceExercises": [
+    {
+      "title": "Hesap Makinesi Fonksiyonları",
+      "description": "Dört işlem yapan bir hesap makinesi fonksiyon seti yaz.",
+      "instructions": [
+        "Toplama, çıkarma, çarpma ve bölme için ayrı fonksiyonlar yaz.",
+        "Bölme fonksiyonunda sıfıra bölme kontrolü yap.",
+        "Fonksiyonları main içinde test et."
+      ],
+      "starterCode": "// Fonksiyonları buraya yaz\n\nvoid main() {\n  // Test kodları\n}",
+      "solution": "double topla(double a, double b) => a + b;\ndouble cikar(double a, double b) => a - b;\ndouble carp(double a, double b) => a * b;\ndouble bol(double a, double b) {\n  if (b == 0) {\n    print('Hata: Sıfıra bölme!');\n    return 0.0;\n  }\n  return a / b;\n}\n\nvoid main() {\n  print('15.5 + 4.5 = ${topla(15.5, 4.5)}');\n  print('15.5 - 4.5 = ${cikar(15.5, 4.5)}');\n  print('15.5 * 4.5 = ${carp(15.5, 4.5)}');\n  print('15.5 / 4.5 = ${bol(15.5, 4.5)}');\n  print('15.5 / 0 = ${bol(15.5, 0.0)}');\n}",
+      "output": "15.5 + 4.5 = 20.0\n15.5 - 4.5 = 11.0\n15.5 * 4.5 = 69.75\n15.5 / 4.5 = 3.4444444444444446\nHata: Sıfıra bölme!\n15.5 / 0 = 0.0",
+      "difficulty": "beginner"
+    },
+    {
+      "title": "Kullanıcı Profili Formatlama",
+      "description": "Kullanıcı bilgilerini formatlayan bir fonksiyon yaz.",
+      "instructions": [
+        "İsimlendirilmiş parametrelerle ad (zorunlu), yaş ve şehir (opsiyonel) alan bir fonksiyon yaz.",
+        "Yaş ve şehir belirtilmişse ekle, yoksa atla.",
+        "Formatlı bir string döndür."
+      ],
+      "starterCode": "// Fonksiyonu buraya yaz\n\nvoid main() {\n  // Test kodları\n}",
+      "solution": "String profilFormatla({\n  required String ad,\n  int? yas,\n  String? sehir,\n}) {\n  String mesaj = 'Ad: $ad';\n  if (yas != null) {\n    mesaj += ', Yaş: $yas';\n  }\n  if (sehir != null) {\n    mesaj += ', Şehir: $sehir';\n  }\n  return mesaj;\n}\n\nvoid main() {\n  print(profilFormatla(ad: 'Zeynep'));\n  print(profilFormatla(ad: 'Can', yas: 25));\n  print(profilFormatla(ad: 'Elif', yas: 20, sehir: 'İzmir'));\n}",
+      "output": "Ad: Zeynep\nAd: Can, Yaş: 25\nAd: Elif, Yaş: 20, Şehir: İzmir",
+      "difficulty": "beginner"
+    },
+    {
+      "title": "Esnek Hesaplama Aracı",
+      "description": "Bir sayıyı işleyen ve sonucu döndüren bir fonksiyon parametresi alan bir fonksiyon yaz.",
+      "instructions": [
+        "Bir sayıyı ve bir fonksiyon parametresini alan bir fonksiyon yaz.",
+        "Fonksiyon parametresi, sayıyı işleyip bir sonuç döndürmeli (örneğin, kare alma, iki katına çıkarma).",
+        "Main içinde farklı işlemler test et."
+      ],
+      "starterCode": "// Fonksiyonu buraya yaz\n\nvoid main() {\n  // Test kodları\n}",
+      "solution": "double islemYap(double sayi, double Function(double) islem) {\n  return islem(sayi);\n}\n\nvoid main() {\n  double kare = islemYap(5.0, (n) => n * n);\n  double ikiKat = islemYap(5.0, (n) => n * 2);\n  double karekök = islemYap(16.0, (n) => n.sqrt());\n\n  print('Kare: $kare');\n  print('İki kat: $ikiKat');\n  print('Karekök: ${karekök.toStringAsFixed(2)}');\n}",
+      "output": "Kare: 25.0\nİki kat: 10.0\nKarekök: 4.00",
+      "difficulty": "intermediate"
+    }
+  ],
+  "summary": {
+    "title": "Tebrikler, Alet Çantan Hazır!",
+    "content": "Bu modülde, Dart’ın fonksiyonlarını öğrendin! **void** fonksiyonlarla iş yaptın, **değer döndüren** fonksiyonlarla sonuçlar ürettin, **isimlendirilmiş** ve **opsiyonel parametrelerle** kodunu şık ve esnek hale getirdin. Ayrıca, **anonim fonksiyonlar** ve **fonksiyon parametreleriyle** koduna süper güçler kattın! 🛠️\n\nBu bilgiler, Flutter’da dinamik ve düzenli uygulamalar geliştirmek için temel oluşturdu. Örneğin, bir butonun tıklama olayını işlemek, kullanıcı verilerini formatlamak veya bir API yanıtını hesaplamak artık senin için kolay! Bir sonraki modülde, nesne yönelimli programlamayla koduna bir ruh katacağız. Hazır mısın, kod ustası? 😎",
+    "keyTakeaways": [
+      "void: İş yapar, değer döndürmez",
+      "return: Sonuç üreten fonksiyonlar",
+      "İsimlendirilmiş parametreler: Şık ve okunabilir kod",
+      "Opsiyonel parametreler: Esnek ve kullanıcı dostu",
+      "Anonim fonksiyonlar: Tek seferlik işlemler",
+      "Fonksiyon parametreleri: Dinamik davranışlar"
+    ],
+    "nextModule": "Nesne Yönelimli Programlama: Koduna Ruh Kat",
+    "motivationalQuote": "Fonksiyonlar, kodunun süper kahramanlarıdır. Onlarla her sorunu çözebilirsin! Devam et, harikasın! ✨"
+  },
+  "resources": {
+    "title": "Ek Kaynaklar: Fonksiyonlarını Güçlendir",
+    "links": [
+      {
+        "name": "Dart Resmi Dokümantasyon: Fonksiyonlar",
+        "url": "https://dart.dev/language/functions",
+        "description": "Dart’ın fonksiyonları hakkında resmi ve ayrıntılı rehber."
+      },
+      {
+        "name": "DartPad",
+        "url": "https://dartpad.dev",
+        "description": "Fonksiyonları test etmek için çevrimiçi Dart editörü."
+      },
+      {
+        "name": "Flutter Official YouTube: Dart Fonksiyonları",
+        "url": "https://www.youtube.com/flutter",
+        "description": "Flutter ekibinin fonksiyonlar ve Dart üzerine videoları."
+      },
+      {
+        "name": "Stack Overflow: Dart Fonksiyon Soruları",
+        "url": "https://stackoverflow.com/questions/tagged/dart",
+        "description": "Fonksiyonlarla ilgili sorular sorup cevap bulabileceğin topluluk."
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "moduleId": 1,
+  "moduleName": "Dart Temelleri",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Dart'ta hangi veri tipi ondalık sayıları temsil eder?",
+      "type": "multiple_choice",
+      "options": ["int", "double", "String", "bool"],
+      "correctAnswer": 1,
+      "explanation": "double veri tipi ondalık sayıları (3.14, -2.5 gibi) temsil eder.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 2,
+      "question": "Null Safety özelliği neyi sağlar?",
+      "type": "multiple_choice",
+      "options": [
+        "Değişkenlerin hızlı çalışmasını",
+        "Değişkenlerin varsayılan olarak null olmamasını",
+        "Değişkenlerin otomatik silinmesini",
+        "Değişkenlerin şifrelenmesini"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Null Safety, değişkenlerin varsayılan olarak null değer almamasını sağlar.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": 3,
+      "question": "Aşağıdaki kod parçasının çıktısı nedir?\n\nint a = 10;\nint b = 3;\nprint(a % b);",
+      "type": "code_output",
+      "options": ["3", "1", "0", "10"],
+      "correctAnswer": 1,
+      "explanation": "% operatörü mod işlemi yapar. 10 % 3 = 1 (10'u 3'e böldüğümüzde kalan 1)",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": 4,
+      "question": "String interpolation için hangi sembol kullanılır?",
+      "type": "multiple_choice",
+      "options": ["#", "$", "@", "&"],
+      "correctAnswer": 1,
+      "explanation": "Dart'ta string interpolation için $ sembolü kullanılır. Örnek: 'Merhaba $name'",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 5,
+      "question": "var anahtar kelimesi ile tanımlanan değişkenin tipi ne zaman belirlenir?",
+      "type": "multiple_choice",
+      "options": [
+        "Çalışma zamanında",
+        "Derleme zamanında",
+        "Değişken kullanıldığında",
+        "Hiçbir zaman"
+      ],
+      "correctAnswer": 1,
+      "explanation": "var ile tanımlanan değişkenin tipi derleme zamanında (compile time) belirlenir.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": 6,
+      "question": "List<int> numbers = [1, 2, 3]; kodunda numbers.length değeri nedir?",
+      "type": "code_output",
+      "options": ["2", "3", "4", "Hata verir"],
+      "correctAnswer": 1,
+      "explanation": "List'te 3 eleman var: 1, 2, 3. Bu yüzden length değeri 3'tür.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 7,
+      "question": "Aşağıdakilerden hangisi Dart'ta geçerli bir fonksiyon tanımlamasıdır?",
+      "type": "multiple_choice",
+      "options": [
+        "function hesapla() {}",
+        "void hesapla() {}",
+        "def hesapla() {}",
+        "func hesapla() {}"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dart'ta fonksiyon tanımlamak için 'void' (dönüş değeri yoksa) veya dönüş tipi kullanılır.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 8,
+      "question": "Map<String, int> yapilar = {'ev': 1, 'okul': 2}; kodunda yapilar['ev'] değeri nedir?",
+      "type": "code_output",
+      "options": ["'ev'", "1", "2", "null"],
+      "correctAnswer": 1,
+      "explanation": "Map'te 'ev' anahtarına karşılık gelen değer 1'dir.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 9,
+      "question": "Dart'ta hangi döngü yapısı koleksiyonları dolaşmak için en uygunudur?",
+      "type": "multiple_choice",
+      "options": ["while", "do-while", "for", "for-in"],
+      "correctAnswer": 3,
+      "explanation": "for-in döngüsü koleksiyonları (List, Set, Map) dolaşmak için en uygun yapıdır.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": 10,
+      "question": "final ve const anahtar kelimeleri arasındaki temel fark nedir?",
+      "type": "multiple_choice",
+      "options": [
+        "final çalışma zamanında, const derleme zamanında belirlenir",
+        "final sadece sayılar için, const sadece metinler için",
+        "Aralarında fark yoktur",
+        "final genel, const yerel değişkenler için"
+      ],
+      "correctAnswer": 0,
+      "explanation": "final değişkenler çalışma zamanında bir kez atanabilir, const değişkenler derleme zamanında sabit olmalıdır.",
+      "difficulty": "hard",
+      "points": 20
+    }
+  ]
+} 

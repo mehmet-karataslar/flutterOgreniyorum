@@ -1,0 +1,214 @@
+{
+  "moduleId": "variables_and_types",
+  "title": "Değişkenler ve Veri Tipleri",
+  "week": 1,
+  "order": 1,
+  "estimatedTime": "45 dakika",
+  "difficulty": "beginner",
+  "description": "Dart'ın temel veri tiplerini (int, double, String, bool) ve değişken tanımlama yöntemlerini öğrenelim.",
+  "introduction": {
+    "title": "Değişkenler ve Veri Tipleri",
+    "content": "Dart'ta her verinin bir türü vardır. Bu modülde temel veri tiplerini öğreneceğiz.",
+    "keyPoints": [
+      "int - Tam sayılar",
+      "double - Ondalıklı sayılar", 
+      "String - Metin veriler",
+      "bool - Mantıksal değerler"
+    ],
+    "motivationalQuote": "Her büyük yolculuk, küçük bir adımla başlar!"
+  },
+  "sections": [
+    {
+      "id": "basic_types",
+      "title": "Temel Veri Tipleri",
+      "content": "Dart'ta dört temel veri tipi vardır: int, double, String ve bool. Her birinin kendine özgü kullanım alanları vardır.",
+      "subsections": [
+        {
+          "id": "int_type",
+          "title": "int (Tam Sayılar)",
+          "content": "int, küsüratı olmayan tam sayılar için kullanılır. Yaş, adet, sıra gibi değerler için idealdir.",
+          "codeExamples": [
+            {
+              "title": "Temel int Kullanımı",
+              "code": "int yas = 25;\nint takipciSayisi = 12000;\n\nprint('Yaşım: $yas');\nprint('Takipçi sayım: $takipciSayisi');\n\n// Matematiksel işlemler\nint toplam = yas + 5;\nprint('5 yıl sonra: $toplam');",
+              "explanation": "int değişkenleri tam sayıları saklar ve matematiksel işlemler için hızlıdır.",
+              "output": "Yaşım: 25\nTakipçi sayım: 12000\n5 yıl sonra: 30"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Yaşını ve favori sayını int değişkenleri olarak tanımla, sonra topla.",
+            "hint": "int yas = ?; int favoriSayi = ?; kullan",
+            "solution": "int yas = 22;\nint favoriSayi = 42;\nint toplam = yas + favoriSayi;\nprint('Toplam: $toplam');",
+            "output": "Toplam: 64"
+          },
+          "keyPoints": [
+            "Tam sayılar için",
+            "Hızlı matematiksel işlemler",
+            "Bellek dostu"
+          ]
+        },
+        {
+          "id": "double_type", 
+          "title": "double (Ondalıklı Sayılar)",
+          "content": "double, küsüratı olan sayılar için kullanılır. Boy, fiyat, oran gibi hassas değerler için idealdir.",
+          "codeExamples": [
+            {
+              "title": "Temel double Kullanımı",
+              "code": "double boy = 1.75;\ndouble fiyat = 49.90;\n\nprint('Boy: $boy metre');\nprint('Fiyat: $fiyat TL');\n\n// Hassas hesaplamalar\ndouble indirimli = fiyat * 0.9;\nprint('İndirimli fiyat: ${indirimli.toStringAsFixed(2)} TL');",
+              "explanation": "double ile hassas hesaplamalar yapabilir, ondalık basamakları kontrol edebiliriz.",
+              "output": "Boy: 1.75 metre\nFiyat: 49.90 TL\nİndirimli fiyat: 44.91 TL"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Kilo ve boyunu kullanarak BMI hesapla (BMI = kilo / (boy * boy))",
+            "hint": "double kullan ve toStringAsFixed(1) ile 1 basamak göster",
+            "solution": "double kilo = 68.5;\ndouble boy = 1.70;\ndouble bmi = kilo / (boy * boy);\nprint('BMI: ${bmi.toStringAsFixed(1)}');",
+            "output": "BMI: 23.7"
+          },
+          "keyPoints": [
+            "Ondalıklı sayılar",
+            "Hassas hesaplamalar",
+            "Finansal uygulamalar"
+          ]
+        },
+        {
+          "id": "string_type",
+          "title": "String (Metin)",
+          "content": "String, metin verilerini saklar. Tek veya çift tırnak kullanabilirsiniz.",
+          "codeExamples": [
+            {
+              "title": "Temel String Kullanımı",
+              "code": "String ad = 'Zeynep';\nString mesaj = 'Flutter öğrenmek harika!';\n\n// String birleştirme\nString hosgeldin = 'Merhaba $ad! $mesaj';\nprint(hosgeldin);\n\n// String işlemleri\nprint('Büyük harf: ${ad.toUpperCase()}');\nprint('Uzunluk: ${ad.length}');",
+              "explanation": "String interpolation ile dinamik mesajlar oluşturabiliriz.",
+              "output": "Merhaba Zeynep! Flutter öğrenmek harika!\nBüyük harf: ZEYNEP\nUzunluk: 6"
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Adını ve hobiyi kullanarak bir tanıtım mesajı oluştur",
+            "hint": "String interpolation kullan",
+            "solution": "String ad = 'Murat';\nString hobi = 'resim yapmak';\nString mesaj = 'Ben $ad ve $hobi severim!';\nprint(mesaj);",
+            "output": "Ben Murat ve resim yapmak severim!"
+          },
+          "keyPoints": [
+            "Metin veriler",
+            "Dinamik mesajlar",
+            "Çok sayıda string işlemi"
+          ]
+        },
+        {
+          "id": "bool_type",
+          "title": "bool (Mantıksal)",
+          "content": "bool sadece true veya false değerlerini alır. Koşullu durumlar için kullanılır.",
+          "codeExamples": [
+            {
+              "title": "Temel bool Kullanımı",
+              "code": "bool girisYapildi = true;\nbool premiumKullanici = false;\n\nif (girisYapildi) {\n  print('Hoş geldiniz!');\n  if (premiumKullanici) {\n    print('Premium özelliklere erişebilirsiniz.');\n  } else {\n    print('Standart kullanıcı.');\n  }\n} else {\n  print('Lütfen giriş yapın.');\n}",
+              "explanation": "bool değişkenleri ile koşullu mantık oluşturabiliriz.",
+              "output": "Hoş geldiniz!\nStandart kullanıcı."
+            }
+          ],
+          "interactiveExercise": {
+            "question": "Sınav notuna göre geçti/kaldı kontrolü yap (>= 50 geçti)",
+            "hint": "bool gecti = not >= 50; kullan",
+            "solution": "int not = 75;\nbool gecti = not >= 50;\nprint(gecti ? 'Geçti!' : 'Kaldı.');",
+            "output": "Geçti!"
+          },
+          "keyPoints": [
+            "true/false değerleri",
+            "Koşullu mantık",
+            "Minimal bellek kullanımı"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "variable_declaration",
+      "title": "Değişken Tanımlama",
+      "content": "Dart'ta değişken tanımlamak için var, final ve const kullanabiliriz.",
+      "subsections": [
+        {
+          "id": "var_keyword",
+          "title": "var Anahtar Kelimesi",
+          "content": "var, otomatik tip çıkarımı yapar. İlk atanan değerin tipini alır.",
+          "codeExamples": [
+            {
+              "title": "var Kullanımı",
+              "code": "var ad = 'Elif'; // String\nvar sayi = 42; // int\n\nprint('Merhaba $ad, sayın: $sayi');\n\n// Tip değişmez\nsayi = sayi + 1; // OK\n// ad = 100; // HATA!",
+              "explanation": "var otomatik olarak tip belirler ve değiştirilemez.",
+              "output": "Merhaba Elif, sayın: 42"
+            }
+          ],
+          "keyPoints": [
+            "Otomatik tip çıkarımı",
+            "Esnek kullanım",
+            "Tip güvenliği"
+          ]
+        },
+        {
+          "id": "final_keyword",
+          "title": "final Anahtar Kelimesi", 
+          "content": "final, bir kez atanan değeri korur. Runtime'da belirlenir.",
+          "codeExamples": [
+            {
+              "title": "final Kullanımı",
+              "code": "final String kullaniciID = 'user123';\nfinal DateTime simdikiZaman = DateTime.now();\n\nprint('Kullanıcı: $kullaniciID');\nprint('Zaman: $simdikiZaman');\n\n// kullaniciID = 'yeni'; // HATA!",
+              "explanation": "final değişkenler runtime'da atanır ama sonra değiştirilemez.",
+              "output": "Kullanıcı: user123\nZaman: 2024-01-15 14:30:00"
+            }
+          ],
+          "keyPoints": [
+            "Bir kez atanır",
+            "Runtime belirlenir",
+            "Güvenli kod"
+          ]
+        },
+        {
+          "id": "const_keyword",
+          "title": "const Anahtar Kelimesi",
+          "content": "const, derleme zamanında sabit değerler için kullanılır.",
+          "codeExamples": [
+            {
+              "title": "const Kullanımı",
+              "code": "const double pi = 3.14159;\nconst String appName = 'Flutter App';\nconst int maxItems = 100;\n\nprint('Pi: $pi');\nprint('Uygulama: $appName');\nprint('Maksimum öğe: $maxItems');",
+              "explanation": "const değerleri derleme zamanında belirlenir ve değiştirilemez.",
+              "output": "Pi: 3.14159\nUygulama: Flutter App\nMaksimum öğe: 100"
+            }
+          ],
+          "keyPoints": [
+            "Derleme zamanı sabiti",
+            "Performans optimizasyonu",
+            "Evrensel değerler"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "title": "Özet",
+    "content": "Bu modülde Dart'ın temel veri tiplerini ve değişken tanımlama yöntemlerini öğrendik.",
+    "keyTakeaways": [
+      "int: Tam sayılar için hızlı ve verimli",
+      "double: Ondalıklı sayılar için hassas hesaplamalar",
+      "String: Metin veriler için esnek kullanım",
+      "bool: Mantıksal durumlar için true/false",
+      "var: Otomatik tip çıkarımı ile esnek tanımlama",
+      "final: Bir kez atanan değerler için güvenlik",
+      "const: Derleme zamanı sabitleri için performans"
+    ],
+    "nextSteps": [
+      "Operatörler ile veri manipülasyonu",
+      "Kontrol akışı ile program mantığı",
+      "Koleksiyonlar ile veri grupları"
+    ]
+  },
+  "practiceExercises": [
+    {
+      "title": "Kişisel Bilgi Sistemi",
+      "description": "Bir kişinin bilgilerini saklamak için uygun veri tiplerini kullan",
+      "difficulty": "beginner",
+      "estimatedTime": "10 dakika",
+      "instructions": "Ad, yaş, boy, öğrenci olup olmadığını sakla ve yazdır",
+      "solution": "String ad = 'Ahmet';\nint yas = 20;\ndouble boy = 1.80;\nbool ogrenci = true;\n\nprint('Ad: $ad');\nprint('Yaş: $yas');\nprint('Boy: $boy');\nprint('Öğrenci: ${ogrenci ? \"Evet\" : \"Hayır\"}');"
+    }
+  ]
+} 

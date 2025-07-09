@@ -1,0 +1,140 @@
+{
+  "moduleId": "collections",
+  "title": "Koleksiyonlar: Verileri Bir Arada Tutmak",
+  "week": 1,
+  "order": 4,
+  "estimatedTime": "35 dakika",
+  "difficulty": "beginner",
+  "description": "Tek tek kutularla uğraşmak yerine, verilerimizi bir arada, gruplanmış halde tutmak için kullandığımız güçlü araçlar.",
+  "introduction": {
+    "title": "Giriş: Veri Organizasyonu",
+    "content": "Tek tek değişkenlerle uğraşmak çok yorucu! 100 öğrencinin notunu tutmak için 100 ayrı değişken mi tanımlayacaksın? Koleksiyonlar bu sorunu çözüyor.",
+    "keyPoints": [
+      "List: Sıralı listeler",
+      "Set: Benzersiz elemanlar",
+      "Map: Anahtar-değer çiftleri",
+      "Dinamik ve statik boyutlar"
+    ]
+  },
+  "sections": [
+    {
+      "id": "list_basics",
+      "title": "List: Sıralı Veri Depolama",
+      "content": "En çok kullanacağımız koleksiyon türü. Elemanları sırayla saklar.",
+      "subsections": [
+        {
+          "id": "list_creation",
+          "title": "Liste Oluşturma ve Kullanma",
+          "content": "Listeler elemanları 0'dan başlayarak numaralar.",
+          "codeExamples": [
+            {
+              "title": "Temel Liste İşlemleri",
+              "code": "// Liste oluşturma\nList<String> meyveler = ['Elma', 'Armut', 'Muz'];\nList<int> sayilar = [1, 2, 3, 4, 5];\n\n// Eleman ekleme\nmeyveler.add('Portakal');\nsayilar.addAll([6, 7, 8]);\n\n// Erişim\nprint('İlk meyve: ${meyveler[0]}');\nprint('Son sayı: ${sayilar.last}');\nprint('Liste uzunluğu: ${meyveler.length}');",
+              "explanation": "Listeler sıralı koleksiyonlardır. add() ile eleman ekler, [index] ile erişirsiniz.",
+              "output": "İlk meyve: Elma\nSon sayı: 8\nListe uzunluğu: 4"
+            }
+          ],
+          "keyPoints": [
+            "Sıralı elemanlar",
+            "0'dan başlayan indeks",
+            "Dinamik boyut",
+            "Tekrarlı elemanlar olabilir"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_basics", 
+      "title": "Set: Benzersiz Elemanlar",
+      "content": "Her elemandan sadece bir tane olmasını istediğimizde kullanırız.",
+      "subsections": [
+        {
+          "id": "set_usage",
+          "title": "Set Kullanımı",
+          "content": "Tekrarlı elemanları otomatik olarak engeller.",
+          "codeExamples": [
+            {
+              "title": "Set İşlemleri",
+              "code": "Set<String> renkler = {'Kırmızı', 'Mavi', 'Yeşil', 'Kırmızı'};\nprint('Renkler: $renkler'); // Kırmızı sadece bir kez görünür\n\n// Eleman ekleme\nrenkler.add('Sarı');\nrenkler.add('Mavi'); // Zaten var, eklenmez\n\nprint('Son renkler: $renkler');",
+              "explanation": "Set'ler benzersizlik garantisi verir. Aynı element iki kez eklenemez.",
+              "output": "Renkler: {Kırmızı, Mavi, Yeşil}\nSon renkler: {Kırmızı, Mavi, Yeşil, Sarı}"
+            }
+          ],
+          "keyPoints": [
+            "Benzersiz elemanlar",
+            "Otomatik tekrar kontrolü",
+            "Hızlı arama",
+            "Matematiksel set işlemleri"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map_basics",
+      "title": "Map: Anahtar-Değer Eşleştirme",
+      "content": "Sözlük gibi çalışır. Her bilginin bir anahtarı vardır.",
+      "subsections": [
+        {
+          "id": "map_usage",
+          "title": "Map Kullanımı", 
+          "content": "Anahtar ile değere erişim sağlar.",
+          "codeExamples": [
+            {
+              "title": "Map İşlemleri",
+              "code": "Map<String, int> yaslar = {\n  'Ali': 25,\n  'Ayşe': 30,\n  'Mehmet': 28,\n};\n\n// Erişim\nprint('Ali\\'nin yaşı: ${yaslar['Ali']}');\n\n// Ekleme\nyaslar['Fatma'] = 27;\n\n// Kontrol\nif (yaslar.containsKey('Zeynep')) {\n  print('Zeynep var');\n} else {\n  print('Zeynep yok');\n}",
+              "explanation": "Map'ler anahtar-değer çiftleri saklar. Telefon rehberi gibi düşünebilirsiniz.",
+              "output": "Ali'nin yaşı: 25\nZeynep yok"
+            }
+          ],
+          "keyPoints": [
+            "Anahtar-değer çiftleri",
+            "Hızlı erişim",
+            "Benzersiz anahtarlar",
+            "Esnek veri yapısı"
+          ]
+        }
+      ]
+    }
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "id": 1,
+        "question": "List ve Set arasındaki temel fark nedir?",
+        "type": "multiple_choice",
+        "options": [
+          "List daha hızlıdır",
+          "Set'te tekrarlı elemanlar olamaz",
+          "List sadece sayıları saklar",
+          "Set daha fazla bellek kullanır"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Set'ler benzersiz elemanlar garantisi verir, List'lerde aynı eleman birden fazla kez olabilir."
+      }
+    ]
+  },
+  "practiceExercises": [
+    {
+      "title": "Öğrenci Not Sistemi",
+      "description": "Map kullanarak öğrenci not sistemi oluşturun",
+      "instructions": [
+        "Öğrenci adları ve notlarını Map'te saklayın",
+        "Ortalama hesaplayın",
+        "En yüksek notu bulun"
+      ],
+      "starterCode": "Map<String, int> ogrenciNotlari = {\n  // Notları buraya ekleyin\n};",
+      "solution": "Map<String, int> ogrenciNotlari = {\n  'Ali': 85,\n  'Ayşe': 92,\n  'Mehmet': 78,\n};\n\nint toplam = 0;\nfor (int not in ogrenciNotlari.values) {\n  toplam += not;\n}\n\ndouble ortalama = toplam / ogrenciNotlari.length;\nint enYuksek = ogrenciNotlari.values.reduce((a, b) => a > b ? a : b);\n\nprint('Ortalama: $ortalama');\nprint('En yüksek not: $enYuksek');",
+      "difficulty": "beginner"
+    }
+  ],
+  "summary": {
+    "title": "Koleksiyonlar Özeti", 
+    "keyTakeaways": [
+      "List: Sıralı elemanlar için",
+      "Set: Benzersiz elemanlar için", 
+      "Map: Anahtar-değer çiftleri için",
+      "Her birinin kendine özel kullanım alanı var"
+    ],
+    "nextModule": "Fonksiyonlar: Kendi Alet Çantanı Oluşturmak"
+  }
+} 

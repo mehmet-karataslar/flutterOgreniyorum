@@ -1,0 +1,141 @@
+{
+  "moduleId": 2,
+  "moduleName": "Nesne Yönelimli Programlama",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Dart'ta bir sınıfın temel sözdizimi nedir?",
+      "type": "multiple_choice",
+      "options": ["class MyClass {}", "Class MyClass {}", "def MyClass {}", "struct MyClass {}"],
+      "correctAnswer": 0,
+      "explanation": "Dart'ta sınıflar 'class' anahtar kelimesi ile tanımlanır.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 2,
+      "question": "Constructor (yapıcı metot) ne için kullanılır?",
+      "type": "multiple_choice",
+      "options": [
+        "Sınıfı silmek için",
+        "Nesneyi başlatmak için",
+        "Metotları çağırmak için",
+        "Sınıfı kopyalamak için"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Constructor, bir sınıftan nesne oluşturulurken o nesneyi başlatmak için kullanılır.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 3,
+      "question": "Aşağıdaki kodda hata nedir?\n\nclass Person {\n  String name;\n  Person(this.name);\n}\n\nvoid main() {\n  Person p = Person();\n}",
+      "type": "multiple_choice",
+      "options": [
+        "Sınıf tanımında hata var",
+        "Constructor'a parametre verilmemiş",
+        "main fonksiyonunda hata var",
+        "Hata yok"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Constructor name parametresi bekliyor ama hiçbir değer verilmemiş.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": 4,
+      "question": "Dart'ta kalıtım (inheritance) hangi anahtar kelime ile sağlanır?",
+      "type": "multiple_choice",
+      "options": ["inherits", "extends", "implements", "super"],
+      "correctAnswer": 1,
+      "explanation": "Dart'ta kalıtım 'extends' anahtar kelimesi ile sağlanır.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 5,
+      "question": "Abstract sınıflar hakkında hangisi doğrudur?",
+      "type": "multiple_choice",
+      "options": [
+        "Doğrudan instance oluşturulabilir",
+        "Sadece concrete metotları olabilir",
+        "Instance oluşturulamaz, sadece extend edilebilir",
+        "Hiçbir metodu olmaz"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Abstract sınıflardan doğrudan instance oluşturulamaz, sadece extend edilebilir.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": 6,
+      "question": "Mixin hakkında hangisi doğrudur?",
+      "type": "multiple_choice",
+      "options": [
+        "Sadece tek sınıftan inherit edilebilir",
+        "Çoklu kalıtım sağlar",
+        "Sınıflara ek özellikler katmak için kullanılır",
+        "Sadece abstract sınıflarla kullanılır"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Mixin, sınıflara ek özellikler ve metotlar katmak için kullanılır.",
+      "difficulty": "hard",
+      "points": 20
+    },
+    {
+      "id": 7,
+      "question": "Aşağıdaki kod parçasının çıktısı ne olur?\n\nclass Animal {\n  void speak() => print('Animal speaks');\n}\n\nclass Dog extends Animal {\n  @override\n  void speak() => print('Dog barks');\n}\n\nvoid main() {\n  Animal animal = Dog();\n  animal.speak();\n}",
+      "type": "code_output",
+      "options": ["Animal speaks", "Dog barks", "Hata verir", "Hiçbir çıktı olmaz"],
+      "correctAnswer": 1,
+      "explanation": "Polimorfizm sayesinde Dog sınıfının speak metodu çalışır.",
+      "difficulty": "medium",
+      "points": 15
+    },
+    {
+      "id": 8,
+      "question": "Interface (arayüz) nasıl implement edilir?",
+      "type": "multiple_choice",
+      "options": [
+        "extends anahtar kelimesi ile",
+        "implements anahtar kelimesi ile",
+        "with anahtar kelimesi ile",
+        "super anahtar kelimesi ile"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Interface'ler 'implements' anahtar kelimesi ile implement edilir.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 9,
+      "question": "Private üye (member) nasıl tanımlanır?",
+      "type": "multiple_choice",
+      "options": [
+        "private anahtar kelimesi ile",
+        "_ (underscore) ile başlatarak",
+        "# işareti ile",
+        "protected anahtar kelimesi ile"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Dart'ta private üyeler _ (underscore) ile başlatılarak tanımlanır.",
+      "difficulty": "easy",
+      "points": 10
+    },
+    {
+      "id": 10,
+      "question": "Named constructor nedir?",
+      "type": "multiple_choice",
+      "options": [
+        "Parametreli constructor",
+        "Varsayılan constructor",
+        "Özel isimle tanımlanmış constructor",
+        "Static constructor"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Named constructor, özel bir isimle tanımlanmış constructor'dır. Örnek: Person.fromJson()",
+      "difficulty": "hard",
+      "points": 20
+    }
+  ]
+} 
